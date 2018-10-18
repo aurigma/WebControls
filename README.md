@@ -10,7 +10,7 @@ We introduced the Graphics Mill Web Controls library in 2007. Initially, we buil
 
 Since that time, we had stopped active development of the Web Controls version included in the Graphics Mill SDK. To make sure that our customer still could support the existing code in long-term, we decided to publish the full source code of the Web Controls package on GitHub.
 
-If you start a new project, we recommend considering the Customer's Canvas product, which allows building an online graphics editor more easily and which we implemented on top of the modern technology stack.
+If you start a new project, we recommend considering the [Customer's Canvas](https://customerscanvas.com/) product, which allows building an online graphics editor more easily and which we implemented on top of the modern technology stack.
 
 ## Important notes
 
