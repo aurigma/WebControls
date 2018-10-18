@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Internal" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAACAAgAAAAAEAAAAAAAoA=</HashCode>
+      <FileName>VectorObjects\BaseRectangleVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObjectData" Collapsed="true">
+    <Position X="6" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VectorObjects\BaseRectangleVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VectorObjects\EllipseVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEQAIEUJA0AAAgAABAphBhACCAAAgBKEAYgADGAIAIA=</HashCode>
+      <FileName>VectorObjects\ImageVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData" Collapsed="true">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAEQAAkAAAAAABAIABhACCAAAAAIEAAgAAGAIAIA=</HashCode>
+      <FileName>VectorObjects\ImageVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIgkAAAAAAAEAAABgAABAAAAAAgAAAAIA=</HashCode>
+      <FileName>VectorObjects\LineVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObjectData" Collapsed="true">
+    <Position X="5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAEAAABAAAAAAAAAAgEAAAAA=</HashCode>
+      <FileName>VectorObjects\LineVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAogAAAgAYggAAAIAAAEAAABAAABAAAAAAgAAAAIA=</HashCode>
+      <FileName>VectorObjects\PolylineVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObjectData" Collapsed="true">
+    <Position X="7.25" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAEAAABAAAAAAAAAAgEAAAAA=</HashCode>
+      <FileName>VectorObjects\PolylineVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAEAAIAAEACAEBAEBAAAAAAAAgAAIA=</HashCode>
+      <FileName>VectorObjects\RectangleVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData" Collapsed="true">
+    <Position X="1.5" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAACAEBAAAAAAAAAAEgAAIA=</HashCode>
+      <FileName>VectorObjects\RectangleVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAgkAAAiAIAaCAAggBAAAAARCIABAACAQAAAE=</HashCode>
+      <FileName>VectorObjects\TextVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData" Collapsed="true">
+    <Position X="2.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAgkAAACAIAKCAAggBAAAAAQAIABAACEQAAAE=</HashCode>
+      <FileName>VectorObjects\TextVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAMAJhoYAgAgAABwIAAAYkAgIBCBCMAAEEBAQAAgA=</HashCode>
+      <FileName>VectorObjects\VObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAACAQABAIAAAAAAAAFCAAAAABAAAA=</HashCode>
+      <FileName>VectorObjects\VObjectCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData" Collapsed="true">
+    <Position X="3.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABggIAgAAAAAwAAAAQgAAIBABAIAAAAAEQAAAA=</HashCode>
+      <FileName>VectorObjects\VObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABAAEAAIAADCAwAAAAAEAAEAIAAAIABA=</HashCode>
+      <FileName>Common\Transform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAARIAARACEAAEAAQAQAgAAQAAEABAAAABAgAAgAAA=</HashCode>
+      <FileName>VectorObjects\PsdTextVObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData" Collapsed="true">
+    <Position X="2.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAARIAARACEAAEAAAAQAgAAQAAEAAAAAABAgEAgAAA=</HashCode>
+      <FileName>VectorObjects\PsdTextVObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.SerializationData" Collapsed="true">
+        <Compartments>
+          <Compartment Name="Public" Collapsed="true" />
+          <Compartment Name="Internal" Collapsed="true" />
+          <Compartment Name="Private" Collapsed="true" />
+        </Compartments>
+        <TypeIdentifier>
+          <NewMemberFileName>Canvas\Canvas.SerializationData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>mBCCADWgBuZIAgiCsNCJJAAsC7jliFUfCDAmBCBQEbA=</HashCode>
+      <FileName>Canvas\Canvas.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>VectorObjects\VObjectMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment" Collapsed="true">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAIAAA=</HashCode>
+      <FileName>VectorObjects\TextAlignment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction" Collapsed="true">
+    <Position X="13.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAIAAAAAAAAAECAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>VectorObjects\VObjectAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Franklin Gothic Medium" Size="8.25" />
+</ClassDiagram>

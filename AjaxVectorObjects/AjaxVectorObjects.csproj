@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aurigma.GraphicsMill.AjaxControls.VectorObjects</RootNamespace>
+    <AssemblyName>Aurigma.GraphicsMill.AjaxControls.VectorObjects</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Aurigma.GraphicsMill.AjaxControls.VectorObjects/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\TestWebSite\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aurigma.GraphicsMill, Version=9.3.37.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=x86">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x86.9.3.37\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="CanvasSlim\CanvasSlim.cs" />
+    <Compile Include="Common\BaseConfiguration.cs" />
+    <Compile Include="Common\ColorMap.cs" />
+    <Compile Include="Common\FileCache\FileCache.cs" />
+    <Compile Include="Common\FileCache\IFileCache.cs" />
+    <Compile Include="Common\FileStorage\FileStorageExtensions.cs" />
+    <Compile Include="Common\FontService.cs" />
+    <Compile Include="Common\ISerializableStorage.cs" />
+    <Compile Include="Common\FileCache\ISourceImageParams.cs" />
+    <Compile Include="Common\FileCache\SourceImageParams.cs" />
+    <Compile Include="Common\FileStorage\DirectoryInfoExtensions.cs" />
+    <Compile Include="Common\FileStorage\FileStorage.cs" />
+    <Compile Include="Common\FileStorage\FileStorageConfiguration.cs" />
+    <Compile Include="Common\FileStorage\ICleanableFileStorage.cs" />
+    <Compile Include="Common\FileStorage\IProtectableFileStorage.cs" />
+    <Compile Include="Common\FileCache\MemoryCache.cs" />
+    <Compile Include="Common\FileStorage\NamedLock.cs" />
+    <Compile Include="Common\Logger\DotNetDebugLogger.cs" />
+    <Compile Include="Common\Singleton\SingletonFactory.cs" />
+    <Compile Include="Common\FileStorage\IFileStorage.cs" />
+    <Compile Include="Common\Logger\ILogger.cs" />
+    <Compile Include="Common\RedoUndo\UnknownCommand.cs" />
+    <Compile Include="IResizeOptions.cs" />
+    <Compile Include="JsonVOSerializer.cs" />
+    <Compile Include="Marker.cs" />
+    <Compile Include="Math\Path.cs" />
+    <Compile Include="PsdSvgConverter.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="Canvas\ICanvas.cs" />
+    <Compile Include="Canvas\Canvas.cs" />
+    <Compile Include="Canvas\CanvasClientSideOptions.cs" />
+    <Compile Include="Canvas\CanvasData.cs" />
+    <Compile Include="Canvas\TypeResolver.cs" />
+    <Compile Include="Common\ColorManagement.cs" />
+    <Compile Include="ColorProfiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColorProfiles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BaseViewerPublic.cs" />
+    <Compile Include="Common\CollectionClearedEventArgs.cs" />
+    <Compile Include="Common\IConfiguration.cs" />
+    <Compile Include="Common\ItemAddedEventArgs.cs" />
+    <Compile Include="Common\ItemMovedEventArgs.cs" />
+    <Compile Include="Common\ItemRemovedEventArgs.cs" />
+    <Compile Include="Common\RedoUndo\VObjectMovedCommand.cs" />
+    <Compile Include="Common\RedoUndo\LayerMovedCommand.cs" />
+    <Compile Include="Common\SelectableCollection.cs" />
+    <Compile Include="Common\SelectedIndexChangedEventArgs.cs" />
+    <Compile Include="Handler.cs" />
+    <Compile Include="ImageResizer.cs" />
+    <Compile Include="Math\Utils.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResizeOptions.cs" />
+    <Compile Include="Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Svg\BaseArchive.cs" />
+    <Compile Include="Svg\SvgVoContent.cs" />
+    <Compile Include="Svg\SvgVoCurvedText.cs" />
+    <Compile Include="Svg\SvgVoPathBoundedText.cs" />
+    <Compile Include="Svg\SvgVoPlaceholder.cs" />
+    <Compile Include="Svg\SvgVoBoundedText.cs" />
+    <Compile Include="Svg\SvgVoPlainText.cs" />
+    <Compile Include="Common\ISerializer.cs" />
+    <Compile Include="Svg\Renderer.cs" />
+    <Compile Include="Svg\SvgSerializer.cs" />
+    <Compile Include="Svg\SvgVoDashLine.cs" />
+    <Compile Include="Svg\SvgVoGrid.cs" />
+    <Compile Include="Svg\SvgVoImage.cs" />
+    <Compile Include="Svg\SvgVoLayer.cs" />
+    <Compile Include="Svg\SvgVoAttribute.cs" />
+    <Compile Include="Svg\SvgConverter.cs" />
+    <Compile Include="Svg\SvgVoRectangle.cs" />
+    <Compile Include="Svg\SvgVoShape.cs" />
+    <Compile Include="Svg\SvgVoAutoScaledText.cs" />
+    <Compile Include="Svg\SvgVoSvg.cs" />
+    <Compile Include="Svg\SvgVoText.cs" />
+    <Compile Include="Svg\TarArchive\TarArchive.cs" />
+    <Compile Include="Svg\TarArchive\TarArchiveReadStream.cs" />
+    <Compile Include="Svg\TarArchive\TarArchiveStream.cs" />
+    <Compile Include="Svg\TarArchive\TarArchiveWriteStream.cs" />
+    <Compile Include="Svg\TypeResolver.cs" />
+    <Compile Include="Svg\VoAttributeReader.cs" />
+    <Compile Include="Svg\ZipArchive.cs" />
+    <Compile Include="TextRenderer.cs" />
+    <Compile Include="VectorObjects\BaseTextVObject.cs" />
+    <Compile Include="VectorObjects\BoundedTextVObjectData.cs" />
+    <Compile Include="VectorObjects\BaseTextVObjectData.cs" />
+    <Compile Include="VectorObjects\ContentVObject.cs" />
+    <Compile Include="VectorObjects\ContentVObjectData.cs" />
+    <Compile Include="VectorObjects\FontSettings.cs" />
+    <Compile Include="VectorObjects\IPipelineExtender.cs" />
+    <Compile Include="VectorObjects\IPlaceholderPermission.cs" />
+    <Compile Include="VectorObjects\CurvedTextVObject.cs" />
+    <Compile Include="VectorObjects\CurvedTextVObjectData.cs" />
+    <Compile Include="VectorObjects\DashedLineVObject.cs" />
+    <Compile Include="VectorObjects\DashedLineVObjectData.cs" />
+    <Compile Include="VectorObjects\GridVObject.cs" />
+    <Compile Include="VectorObjects\GridVObjectData.cs" />
+    <Compile Include="VectorObjects\IPermission.cs" />
+    <Compile Include="VectorObjects\ITransformPermission.cs" />
+    <Compile Include="VectorObjects\PathBoundedTextVObject.cs" />
+    <Compile Include="VectorObjects\PathBoundedTextVObjectData.cs" />
+    <Compile Include="VectorObjects\Permission.cs" />
+    <Compile Include="VectorObjects\PlaceholderVObject.cs" />
+    <Compile Include="VectorObjects\PlaceholderVObjectData.cs" />
+    <Compile Include="VectorObjects\PlainTextVObject.cs" />
+    <Compile Include="VectorObjects\PlainTextVObjectData.cs" />
+    <Compile Include="VectorObjects\ShapeVObject.cs" />
+    <Compile Include="VectorObjects\ShapeVObjectData.cs" />
+    <Compile Include="VectorObjects\AutoScaledTextVObject.cs" />
+    <Compile Include="VectorObjects\AutoScaledTextVObjectData.cs" />
+    <Compile Include="VectorObjects\SvgVObject.cs" />
+    <Compile Include="VectorObjects\SvgVObjectData.cs" />
+    <Compile Include="VectorObjects\TextMode.cs" />
+    <Compile Include="VectorObjects\IVObjectVisitor.cs" />
+    <Compile Include="VectorObjects\TextVerticalAlignment.cs" />
+    <Compile Include="VectorObjects\TextWrappingMode.cs" />
+    <Compile Include="VirtualPath\HandlerVirtualFile.cs" />
+    <Compile Include="VirtualPath\ServiceVirtualFile.cs" />
+    <Compile Include="VirtualPath\VirtualPathProvider.cs" />
+    <Compile Include="Common\Collection.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Configuration.cs" />
+    <Compile Include="Common\Controllers\VObjectsRubberband.cs" />
+    <Compile Include="Common\ExceptionFactory.cs" />
+    <Compile Include="Common\RedoUndo\HistoryData.cs" />
+    <Compile Include="Common\RedoUndo\Command.cs" />
+    <Compile Include="Common\RedoUndo\History.cs" />
+    <Compile Include="Common\RedoUndo\LayerAddedCommand.cs" />
+    <Compile Include="Common\RedoUndo\LayerRemovedCommand.cs" />
+    <Compile Include="Common\RedoUndo\VObjectAddedCommand.cs" />
+    <Compile Include="Common\RedoUndo\VObjectRemovedCommand.cs" />
+    <Compile Include="Common\RedoUndo\VObjectChangedCommand.cs" />
+    <Compile Include="Common\CanvasViewer\CanvasViewer.cs" />
+    <Compile Include="Common\Transform.cs" />
+    <Compile Include="Resources\Exceptions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Exceptions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VectorObjects\BaseRectangleVObject.cs" />
+    <Compile Include="VectorObjects\BaseRectangleVObjectData.cs" />
+    <Compile Include="VectorObjects\VObjectAction.cs" />
+    <Compile Include="Layer\Layer.cs" />
+    <Compile Include="Layer\LayerCollection.cs" />
+    <Compile Include="Layer\LayerData.cs" />
+    <Compile Include="Math\PointF.cs" />
+    <Compile Include="Math\RotatedRectangleF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VectorObjects\PolylineVObjectData.cs" />
+    <Compile Include="VectorObjects\PolylineVObject.cs" />
+    <Compile Include="VectorObjects\TextAlignment.cs" />
+    <Compile Include="VectorObjects\EllipseVObject.cs" />
+    <Compile Include="VectorObjects\ImageVObject.cs" />
+    <Compile Include="VectorObjects\ImageVObjectData.cs" />
+    <Compile Include="VectorObjects\LineVObject.cs" />
+    <Compile Include="VectorObjects\LineVObjectData.cs" />
+    <Compile Include="VectorObjects\RectangleVObject.cs" />
+    <Compile Include="VectorObjects\BoundedTextVObject.cs" />
+    <Compile Include="VectorObjects\VObject.cs" />
+    <Compile Include="VectorObjects\VObjectCollection.cs" />
+    <Compile Include="VectorObjects\VObjectData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientScripts\Math\Matrix.js" />
+    <Content Include="ClientScripts\Math\Path.js" />
+    <Content Include="ClientScripts\ParagraphSettings.js" />
+    <Content Include="ClientScripts\PermissionData.js" />
+    <Content Include="ClientScripts\Permission.js" />
+    <Content Include="ClientScripts\Canvas.js" />
+    <Content Include="ClientScripts\CanvasData.js" />
+    <Content Include="ClientScripts\CanvasClientSideOptions.js" />
+    <Content Include="ClientScripts\CanvasViewer\CanvasViewer.js" />
+    <Content Include="ClientScripts\Collection.js" />
+    <Content Include="ClientScripts\Exceptions.js" />
+    <Content Include="ClientScripts\Graphics.js" />
+    <Content Include="ClientScripts\LayerCollection.js" />
+    <Content Include="ClientScripts\LayerData.js" />
+    <Content Include="ClientScripts\Layer.js" />
+    <Content Include="ClientScripts\Math\Common.js" />
+    <Content Include="ClientScripts\Math\PointF.js" />
+    <Content Include="ClientScripts\Math\RectangleF.js" />
+    <Content Include="ClientScripts\Math\RotatedRectangleF.js" />
+    <Content Include="ClientScripts\ObjectFactory.js" />
+    <Content Include="ClientScripts\RedoUndo\Command.js" />
+    <Content Include="ClientScripts\RedoUndo\LayerMovedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\VObjectGroupCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\VObjectMovedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\History.js" />
+    <Content Include="ClientScripts\RedoUndo\HistoryData.js" />
+    <Content Include="ClientScripts\RedoUndo\LayerAddedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\LayerRemovedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\VObjectAddedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\VObjectChangedCommand.js" />
+    <Content Include="ClientScripts\RedoUndo\VObjectRemovedCommand.js" />
+    <Content Include="ClientScripts\SelectionHandler.js" />
+    <Content Include="ClientScripts\Transform.js" />
+    <Content Include="ClientScripts\UpdateStatus.js" />
+    <Content Include="ClientScripts\VectorObjects\BoundedTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\ContentVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\BaseRectangleVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\BaseRectangleVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\BaseTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\ContentVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\PathBoundedTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\PathBoundedTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\PlaceholderVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\PlaceholderVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\CurvedTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\CurvedTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\PlainTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\PlainTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\GridVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\GridVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\DashedLineVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\DashedLineVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\ShapeVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\ShapeVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\AutoScaledTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\AutoScaledTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\SvgVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\SvgVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\TextVerticalAlignment.js" />
+    <Content Include="ClientScripts\VectorObjects\WrappingMode.js" />
+    <Content Include="ClientScripts\VectorObjects\VObjectAction.js" />
+    <Content Include="ClientScripts\VectorObjects\PolylineVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\PolylineVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\TextAlignment.js" />
+    <Content Include="ClientScripts\VectorObjects\LineVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\VObjectCollection.js" />
+    <Content Include="ClientScripts\VectorObjects\RectangleVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\EllipseVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\ImageVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\ImageVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\LineVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\BoundedTextVObject.js" />
+    <Content Include="ClientScripts\VectorObjects\BaseTextVObjectData.js" />
+    <Content Include="ClientScripts\VectorObjects\VObject.js" />
+    <Content Include="ClientScripts\VectorObjects\VObjectData.js" />
+    <Content Include="ClientScripts\VObjectsRubberband\VObjectsRubberband.js" />
+    <Content Include="ClientScripts\Color.js" />
+    <EmbeddedResource Include="Resources\base64.js" />
+    <EmbeddedResource Include="Resources\svg.js" />
+    <EmbeddedResource Include="Resources\base64.debug.js" />
+    <EmbeddedResource Include="Resources\svg.debug.js" />
+    <None Include="packages.config" />
+    <None Include="Resources\Service.asmx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WaitClock.gif" />
+    <EmbeddedResource Include="Resources\VectorObjects.debug.js" />
+    <EmbeddedResource Include="Resources\VectorObjects.js" />
+    <EmbeddedResource Include="Resources\Background.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ColorProfiles.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ColorProfiles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CanvasViewer.debug.js" />
+    <EmbeddedResource Include="Resources\CanvasViewer.js" />
+    <EmbeddedResource Include="Resources\Exceptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Exceptions.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\VObjectsRubberband.debug.js" />
+    <EmbeddedResource Include="Resources\VObjectsRubberband.js" />
+    <None Include="Resources\ColorProfiles\CmykConvert.icm" />
+    <None Include="Resources\ColorProfiles\GrayConvert.icm" />
+    <None Include="Resources\Handler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AjaxControls\AjaxControls.csproj">
+      <Project>{4b342752-5181-4542-9109-355875de985b}</Project>
+      <Name>AjaxControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Svg.NET\Svg.csproj">
+      <Project>{886a98c5-37c0-4e8b-885e-30c1d2f98b47}</Project>
+      <Name>Svg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SVGObjects\SvgObjects.csproj">
+      <Project>{34f5e33e-4037-494b-be37-0558f28a6a97}</Project>
+      <Name>SvgObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tar-cs\tar-cs.csproj">
+      <Project>{b9189786-191b-42c7-8029-244e0da8da21}</Project>
+      <Name>tar-cs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+      copy /B "$(ProjectDir)ClientScripts\*.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\RedoUndo\*.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\Math\*.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\TextAlignment.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\TextVerticalAlignment.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\WrappingMode.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\VObjectAction.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\VObjectCollection.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\VObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\VObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BaseRectangleVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BaseRectangleVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ShapeVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ShapeVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\RectangleVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\EllipseVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\LineVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\LineVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PolylineVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PolylineVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PlaceholderVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PlaceholderVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ContentVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ContentVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ImageVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\ImageVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BaseTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BaseTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\DashedLineVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\DashedLineVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\GridVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\GridVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\SvgVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\SvgVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BoundedTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\BoundedTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PlainTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PlainTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\AutoScaledTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\AutoScaledTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\CurvedTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\CurvedTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PathBoundedTextVObject.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)Resources\VectorObjects.debug.js"+"$(ProjectDir)ClientScripts\VectorObjects\PathBoundedTextVObjectData.js" "$(ProjectDir)Resources\VectorObjects.debug.js"
+      copy /B "$(ProjectDir)ClientScripts\VObjectsRubberband\VObjectsRubberband.js" "$(ProjectDir)Resources\VObjectsRubberband.debug.js"
+      copy /B "$(ProjectDir)ClientScripts\CanvasViewer\CanvasViewer.js" "$(ProjectDir)Resources\CanvasViewer.debug.js"
+
+      $(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)Resources\VectorObjects.debug.js" -out "$(ProjectDir)Resources\VectorObjects.js"
+      $(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)Resources\VObjectsRubberband.debug.js" -out "$(ProjectDir)Resources\VObjectsRubberband.js"
+      $(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)Resources\CanvasViewer.debug.js" -out "$(ProjectDir)Resources\CanvasViewer.js"
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,1117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aurigma.GraphicsMill.AjaxControls</name>
+    </assembly>
+    <members>
+        <member name="N:Aurigma.GraphicsMill.AjaxControls" draft="yes">
+            <summary>The <see cref="N:Aurigma.GraphicsMill.AjaxControls" /> namespace contains classes related to Graphics Mill AJAX controls which provides an user with great GUI for image displaying and editing. These controls are based on ASP.NET 2.0 AJAX framework and allow you to use a standard web development approach. Using these controls you can easily build web photo editors and the imaging web applications.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter" draft="yes">
+            <summary>Converts a control on the Web Forms page to a string.</summary>
+            <remarks>This class is necessary for a design time (for example, it enables you to select a rubberband into the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Rubberband">BaseViewer.Rubberband</see> property directly from the property page).</remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" draft="yes">
+            <summary>Returns a collection of standard values for the data type this type converter is designed for. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be a null reference.</param>
+            <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> that holds a standard set of valid values, or a null reference if the data type does not support a standard set of values.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" draft="yes">
+            <summary>Returns whether the collection of standard values returned from <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" /> is an exclusive list. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <returns><b>true</b> if the <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> returned from GetStandardValues is an exhaustive list of possible values; <b>false</b> if other values are possible.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" draft="yes">
+            <summary>Returns whether this object supports a standard set of values that can be picked from a list. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context.</param>
+            <returns><b>true</b> if <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" /> should be called to find a common set of values the object supports; otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.IsTypeCorrect(System.Web.UI.Control)" draft="yes">
+            <summary>Check whether the control type is correct. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="control">The <see cref="T:System.Web.UI.Control" /> to check.</param>
+            <returns><b>true</b> when the control has a proper type (<see cref="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController" /> interface is supported); otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseControlConverter.#ctor">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl">
+            <summary>Base class for all AJAX-enabled web controls.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.GetScriptDescriptors">
+            <summary>When overridden in a derived class, returns the <see cref="T:System.Web.UI.ScriptDescriptor" /> objects for the control.</summary>
+            <returns>An <see cref="T:System.Collections.IEnumerable" /> collection of <see cref="T:System.Web.UI.ScriptDescriptor" /> objects.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.GetScriptReferences">
+            <summary>When overridden in a derived class, returns the script files for the control.</summary>
+            <returns>An <see cref="T:System.Collections.IEnumerable" /> collection that contains ECMAScript (JavaScript) files that have been registered as embedded resources.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.GetStateFieldId">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.#ctor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.OnInit(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.OnPreRender(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.RenderState">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.ScriptClassName">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseScriptControl.ScriptFiles">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" draft="yes">
+            <summary>Base class for all controls which display some content in a browser.</summary>
+            <remarks><para><see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> is an abstract class which implements common functionality for content viewer controls. You cannot instantiate objects of this class directly.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ActualSizeHorizontalScale" draft="yes">
+            <summary>Gets a value which represents the ratio of screen horizontal resolution to the content resolution.</summary>
+            <value>The value which represents the ratio of screen horizontal resolution to the content resolution.</value>
+            <remarks><para>This property is used to determine how strong the content width was resized to be scaled to its actual size.</para><para>By default this property equals to 1.0 and should be overriden in the inherited class.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ActualSizeVerticalScale" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ActualSizeVerticalScale" draft="yes">
+            <summary>Gets a value which represents the ratio of screen vertical resolution to the content resolution.</summary>
+            <value>The value which represents the ratio of screen vertical resolution to the content resolution.</value>
+            <remarks><para>This property is used to determine how strong the content height was resized to be scaled to its actual size.</para><para>By default this property equals to 1.0 and should be overriden in the inherited class.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ActualSizeHorizontalScale" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack" draft="yes">
+            <summary>Gets/sets a value indicating whether a postback to the server automatically occurs when the user zooms or scrolls the content.</summary>
+            <value>The value which is <b>true</b> when a postback to the server automatically occurs whenever the user  navigates the content in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" />, <b>false</b> otherwise.</value>
+            <remarks><para>If you want to disable automatic postback for certain events (e.g. <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" />) and enable it for other ones (e.g. <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick" />), you can use the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ClientSideOptions" /> property. It exposes a boolean property for each event. </para><para>If <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack" /> is <b>true</b>, postback occurs regardless of values of properties of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions" /> object returned by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ClientSideOptions" /> property.</para><para>Default value is <b>false</b>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.BorderWidth" draft="yes">
+            <summary>Gets/sets the width (in pixels) of the control border.</summary>
+            <value>The value which represents the width (in pixels) of the control border.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ClientSideOptions" draft="yes">
+            <summary>Gets/sets values which configure automatic postback for individual events.</summary>
+            <value><see cref="T:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions" /> class instance which provides an access to properties which configure automatic postback for individual events.</value>
+            <remarks><para>Automatic postback can be enabled for all events with the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack" /> property. However if you want to disable automatic postback for certain events (e.g. <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" />) and enable it for the other ones (e.g. <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick" />), you can use this property. It exposes a boolean property for each event. </para><para>This property makes sense only if <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack" /> is <b>false</b>. If it is <b>true</b>, postback occurs regardless of the values of the properties of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions" /> object.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ContentHeight" draft="yes">
+            <summary>Gets a value that represents the height of the control's content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> values.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the height of the control's content.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ContentWidth" draft="yes">
+            <summary>Gets a value that represents the width of the control's content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> values.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the width of the control's content.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ControlToWorkspace(System.Drawing.PointF)" draft="yes">
+            <summary>Translates point coordinates from the control-related coordinate system to the workspace-related one.</summary>
+            <param name="point">Point coordinates in the control coordinate system.</param>
+            <returns>Point coordinates in the workspace coordinate system.</returns>
+            <remarks><para>The workspace-related coordinate system represents logical coordinates of the image loaded in the control and allows to work with it regardless of zoom, scroll or alignment. The control-related one is used to measure parameters of standard control events (e.g. position of the mouse pointer).</para></remarks>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceToControl(System.Drawing.PointF)" />
+            <overloads><summary>Translates coordinates from the control-related coordinate system to the workspace-related one.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ControlToWorkspace(System.Drawing.RectangleF)" draft="yes">
+            <summary>Translates rectangle coordinates from the control-related coordinate system to the workspace-related one.</summary>
+            <param name="rect">Rectangle coordinates in the control coordinate system.</param>
+            <returns>Rectangle coordinates in the workspace coordinate system.</returns>
+            <remarks><para>The workspace-related coordinate system represents logical coordinates of the image loaded in the control and allows to work with it regardless of zoom, scroll or alignment. The control-related one is used to measure parameters of standard control events (e.g. position of the mouse pointer).</para></remarks>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceToControl(System.Drawing.RectangleF)" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.CssClass">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Dispose" draft="yes">
+            <summary>Releases all resources.</summary>
+            <overloads><summary>Releases all resources.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Dispose(System.Boolean)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.EnableTheming">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Finalize">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Font">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ForeColor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.GetCallbackResult" draft="yes">
+            <summary>Returns the result of a callback event that targets a control.</summary>
+            <returns>The result of the callback.</returns>
+            <remarks>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control implements the <see cref="T:System.Web.UI.ICallbackEventHandler" /> interface and uses the <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RaiseCallbackEvent(System.String)" /> to retrieve data and the <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.GetCallbackResult" /> method to return the retrieved data to the control.</remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Height" draft="yes">
+            <summary>Gets/sets the height (in pixels) of the control area.</summary>
+            <value>The value which represents the height (in pixels) of the control area.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.InvokeRemoteScriptingMethod(System.Object,System.String,System.Object[])">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.IsPageLoaded">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" draft="yes">
+            <summary>Processes the postback data for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <param name="postDataKey">The index within the posted collection that references the content to load.</param>
+            <param name="postCollection">The collection posted to the server.</param>
+            <returns><b>true</b> if the posted content is different from the last posting; otherwise, <b>false</b>.</returns>
+            <remarks><para>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" /> method is used primarily by control developers.</para><para>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" /> method checks if the postback data of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control is different from its previous value, and if so, loads the content and returns <b>true</b>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.MaxZoom" draft="yes">
+            <summary>Gets/sets the maximum allowed zoom value.</summary>
+            <value>The number that specifies the maximum allowed zoom value.</value>
+            <remarks><para>Zoom values are measured in percents/100. It means that value = 1 specify 100% zoom (i.e. actual size), value = 10 means 1000% zoom (10x), value = 0,5 means 50% zoom (half), etc. </para><para>
+Default value is 17.
+</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.MinZoom" draft="yes">
+            <summary>Gets/sets the minimum allowed zoom value.</summary>
+            <value>The number that specifies the minimum allowed zoom value.</value>
+            <remarks><para>Zoom values are measured in percents/100. It means that value = 1 specify 100% zoom (i.e. actual size), value = 10 means 1000% zoom (10x), value = 0,5 means 50% zoom (half), etc. </para><para>
+Default value is 0.2.
+</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" draft="yes">
+            <summary>Gets/sets the navigator control ID (i.e. value stored in the attribute <b>id</b> of the tag that inserts the control).</summary>
+            <value>The value which contains an ID of the navigator control you need to attach.</value>
+            <remarks><para>The following navigator controls are available:</para><list type="bullet"><item><term><see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomInNavigator" /></term><description>left button clicks zoom the image in.</description></item><item><term><see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomOutNavigator" /></term><description>left button clicks zoom the image out.</description></item><item><term><see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomRectangleNavigator" /></term><description>user stretches the rectangle by mouse and when mouse button is released, it zooms selected rectangle in.</description></item><item><term><see cref="T:Aurigma.GraphicsMill.AjaxControls.PanNavigator" /></term><description>when user presses the mouse button down and move the mouse, the image is panned until user releases the button.</description></item></list></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.#ctor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnInit(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnLoad(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnScrolled">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnUnload(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnWorkspaceChanged">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnWorkspaceClick">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.OnZoomed" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" /> event.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RaiseCallbackEvent(System.String)" draft="yes">
+            <summary>Creates the arguments for the callback handler.</summary>
+            <param name="eventArgument">The argument to pass to the event handler.</param>
+            <remarks>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RaiseCallbackEvent(System.String)" /> method is a helper method used by the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control to create the arguments for the callback handler.</remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RaisePostBackEvent(System.String)" draft="yes">
+            <summary>Raises events for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control when a form is posted back to the server.</summary>
+            <param name="eventArgument">The string representation for the index of the list item that raised the event.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RaisePostDataChangedEvent" draft="yes">
+            <summary>Raises events for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control when postback occurs.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Rubberband" draft="yes">
+            <summary>Gets/sets the rubberband control ID (i.e. value stored in the attribute <b>id</b> of the tag that inserts the control).</summary>
+            <value>The value which contains an ID of the rubberband control you need to attach.</value>
+            <remarks>Only the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband" /> control is available.</remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerEnabled" draft="yes">
+            <summary>Gets or sets a value indicating whether to show the ruler.</summary>
+            <value><para><strong>true</strong> if the ruler is shown; otherwise <strong>false</strong>.</para><para>Default value is <strong>false</strong>.</para></value>
+            <remarks><para>Use the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerScale" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerWidth" /> properties to set ruler parameters.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerScale" draft="yes">
+            <summary>Gets or sets the ruler scale.</summary>
+            <value><para>The <see cref="T:System.Single" /> value specifying the ruler scale.</para><para>Default value is <strong>1</strong>.</para></value>
+            <remarks><para>To show the ruler set the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerEnabled" /> property to <strong>true</strong>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerWidth" draft="yes">
+            <summary>Gets or sets the ruler width.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value specifying the ruler width in pixels.</para><para>Default value is <strong>13</strong>.</para></value>
+            <remarks><para>To show the ruler set the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.RulerEnabled" /> property to <strong>true</strong>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" draft="yes">
+            <summary>Gets/sets a value representing horizontal resolution in DPI used to show content in the browser.</summary>
+            <value>The value representing horizontal resolution in DPI used to show content in the browser.</value>
+            <remarks><para>If the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> property is set to <b>true</b> the value of the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" /> property is used to scale content width to its actual size.</para><para>Default value is 72.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenYDpi" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenYDpi" draft="yes">
+            <summary>Gets/sets a value representing vertical resolution in DPI used to show content in the browser.</summary>
+            <value>The value representing vertical resolution in DPI used to show content in the browser.</value>
+            <remarks><para>If the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> property is set to <b>true</b> the value of the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenYDpi" /> property is used to scale content height to its actual size. </para><para>Default value is 72.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScrollBarsStyle" draft="yes">
+            <summary>Gets/sets a value that specifies whether to display scroll bars and whether to hide them automatically when the displayed content is less than the control size.</summary>
+            <value>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.ScrollBarsStyle" /> enumeration member that specifies when to display scroll bars.</value>
+            <remarks><para>Default value is <see cref="F:Aurigma.GraphicsMill.AjaxControls.ScrollBarsStyle.Auto" />.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScrollBarWidth" draft="yes">
+            <summary>Gets/sets a value that represents a scroll bar width (in pixels) in calculations.</summary>
+            <value>The value that represents a scroll bar width (in pixels) in calculations.</value>
+            <remarks><para>Since there is no simple way to determine the scroll bar width from the JavaScript (taking into account different platform, accessibility modes, etc) the estimated value is specified by this property. Typically you should not modify this value (since it has optimal value for the browsers at the present time).</para><note>This value does not change actual scroll bar width.</note><para>Default value is 19.</para></remarks>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Scrolled" draft="yes">
+            <summary>Fires when scroll position of the control is changed.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScrollingPosition" draft="yes">
+            <summary>Gets/sets the position of the scroll bars.</summary>
+            <value>The point that stores the position of the scroll bars.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScrollingSize" draft="yes">
+            <summary>Gets a scroll bar length (in other words, the right-bottom point of the image fragment which is out of the visible area).</summary>
+            <value>A scroll bar length.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.SkinID">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.UpdateViewport">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ViewportAlignment" draft="yes">
+            <summary>Gets/sets a value that specifies content alignment in the control.</summary>
+            <value>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment" /> enumeration member that specifies content alignment in the control.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ViewportBounds" draft="yes">
+            <summary>Gets bounds of the viewport area.</summary>
+            <value><para>The <see cref="T:System.Drawing.RectangleF" /> value which represents bounds of the viewport area.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Width" draft="yes">
+            <summary>Gets/sets the width (in pixels) of the control area.</summary>
+            <value>The value which represents the width (in pixels) of the control area.</value>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceChanged" draft="yes">
+            <summary>Occurs when the content of the associated workspace is replaced.</summary>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick" draft="yes">
+            <summary>Occurs when a mouse button is clicked on the content displayed by this viewer control.</summary>
+            <remarks>Position of the mouse pointer is measured in the coordinates of the workspace and can be used to determine a point of the content selected by mouse click.</remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceHeight" draft="yes">
+            <summary>Gets the workspace height (in pixels) of the content.</summary>
+            <value>The value which represents the height (in pixels) of the workspace.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceToControl(System.Drawing.PointF)" draft="yes">
+            <summary>Translates point coordinates from the workspace-related coordinate system to the control-related one.</summary>
+            <param name="point">Point coordinates in the workspace coordinate system.</param>
+            <returns>Point coordinates in the control coordinate system.</returns>
+            <remarks><para>The workspace-related coordinate system represents logical coordinates of the image loaded in the control and allows to work with it regardless of zoom, scroll or alignment. The control-related one is used to measure parameters of standard control events (e.g. position of the mouse pointer).</para></remarks>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ControlToWorkspace(System.Drawing.PointF)" />
+            <overloads><summary>Translates coordinates from the workspace-related coordinate system to the control-related one.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceToControl(System.Drawing.RectangleF)" draft="yes">
+            <summary>Translates rectangle coordinates from the workspace-related coordinate system to the control-related one.</summary>
+            <param name="rect">Rectangle coordinates in the workspace coordinate system.</param>
+            <returns>Rectangle coordinates in the control coordinate system.</returns>
+            <remarks><para>The workspace-related coordinate system represents logical coordinates of the image loaded in the control and allows to work with it regardless of zoom, scroll or alignment. The control-related one is used to measure parameters of standard control events (e.g. position of the mouse pointer).</para></remarks>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ControlToWorkspace(System.Drawing.RectangleF)" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceWidth" draft="yes">
+            <summary>Gets the workspace width (in pixels) of the content.</summary>
+            <value>The value which represents the width (in pixels) of the workspace.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" draft="yes">
+            <summary>Gets/sets the current zoom value.</summary>
+            <value>The number that specifies the current zoom value.</value>
+            <remarks><para>Zoom values are measured in percents/100. It means that value = 1 specifies 100% zoom (i.e. actual size), value = 10 means 1000% zoom (10x), value = 0.5 means 50% zoom (half), etc. </para><note>If automatic zoom mode is used (i.e. <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomMode" /> property is not <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" />) the value of this property will be ignored. </note><para>Default value is 1.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomMode" />
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" draft="yes">
+            <summary>Fires when zoom or zoom mode of the control is changed.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomMode" draft="yes">
+            <summary>Gets/sets a value that specifies content zoom mode of the control (automatic or manual).</summary>
+            <value><see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomMode" /> enumeration member that specifies the zooming behavior.</value>
+            <remarks><para>In manual zoom mode (i.e. if the value of this property is <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" />) user can change the content zoom either by <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> property or using some zooming <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator">navigator</see>.</para><para>If automatic zoom (except <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.ZoomControl" />) mode is used and you attempt to change <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> value manually, <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomMode" /> property will be set to <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" />.</para><note>When you set some zooming navigator into the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" /> property, this property is reset to <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" />.</note></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomQuality" draft="yes">
+            <summary>Gets/sets a value that specifies a zoom quality.</summary>
+            <value><see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomQuality" /> enumeration member which specifies which resize algorithm to use.</value>
+            <remarks><para>The content can be zoomed with different quality (<see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.High" />, <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.Medium" />, <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.Low" /> and <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.ShrinkHighStretchLow" />). If it is zoomed with low quality, the performance is higher, and vice versa. We recommend to use the <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.ShrinkHighStretchLow" /> zoom quality because it provides more natural results in most cases</para><para>Default value is <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.ShrinkHighStretchLow" />.</para></remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer">
+            <summary>This class represents scrollable viewport web control.</summary>
+            <remarks><para>This class is intended to display the image represented by the <see cref="T:Aurigma.GraphicsMill.Bitmap" /> object through the web. It allows zooming and scrolling the displayed image. Also, you can add a rubberband rectangle (e.g. use it to select a portion of the image).</para><para>You can display a low-resolution preview image while the high-resolution fragment of image is loaded. To do it, set <b>true</b> to the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageEnabled" /> property. When preview image is generated, its width and height is divided by the value stored in the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageResizeRatio" /> property. This image is downloaded to the browser entirely and stretched at the container. After that high-resolution portion of the image is downloaded to the client and displayed in the viewport. This way user can preview (with very poor quality though) the portion of the image, and he can scroll to the necessary position on the image before high resolution fragment is loaded.</para><para>You can add a rubberband control at this bitmap. To do it, drag the rubberband control (e.g. <see cref="T:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband" />) to the form and set its ID to the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Rubberband" /> property. </para><para>This control allows you zooming the displayed image. It can be done either manually or automatically. To zoom the image manually, you should specify the zooming coefficient through the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> property. If it is larger than 1, image is zoomed in, if smaller than 1 - zoomed out. <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> = 1 means actual size.</para><para>
+To zoom the image automatically you can use the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ZoomMode" /> property. If it has other value than <see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" />, the zoom factor is calculated automatically. Depending on the mode, it can zoom image to fit it at the control without scroll bars (<see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.BestFit" />), zoom it to eliminate the horizontal scroll bar (<see cref="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.FitToWidth" />), etc.</para><para>Alternatively you can use some of zooming navigator classes. To do it, drag <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomInNavigator" />, <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomOutNavigator" />, or <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomRectangleNavigator" /> control at the web form, and put its ID to the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" /> property. Also you can use a <see cref="T:Aurigma.GraphicsMill.AjaxControls.PanNavigator" /> to navigate the image by dragging the mouse.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeHorizontalScale" draft="yes">
+            <summary>Gets a value which represents the ratio of screen horizontal resolution to the image resolution.</summary>
+            <value>The value which represents the ratio of screen horizontal resolution to the image resolution.</value>
+            <remarks><para>This property is used to determine how strong the image width was resized to be scaled to its actual size.</para><para>If the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> property is set to <b>false</b> the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeHorizontalScale" /> property will be equal to 1.0.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeVerticalScale" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeVerticalScale" draft="yes">
+            <summary>Gets a value which represents the ratio of screen vertical resolution to the image resolution.</summary>
+            <value>The value which represents the ratio of screen vertical resolution to the image resolution.</value>
+            <remarks><para>This property is used to determine how strong the image height was resized to be scaled to its actual size.</para><para>If the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> property is set to <b>false</b> the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeVerticalScale" /> property will be equal to 1.0.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeHorizontalScale" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.Bitmap" draft="yes">
+            <summary>Gets/sets the bitmap which is displayed in the control.</summary>
+            <value>The bitmap which should be displayed in the control.</value>
+            <remarks><para>When you assign another instance of the <see cref="T:Aurigma.GraphicsMill.Bitmap" /> class to this property, it is highly recommended to dispose the copy currently stored in this property. It will make your application much more memory-friendly.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BitmapStateEnabled" draft="yes">
+            <summary>Gets/sets a value which specifies whether the bitmap specified in the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.Bitmap" /> property should be stored between server roundtrips.</summary>
+            <value>If <b>true</b>, the control tracks the bitmap specified in the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.Bitmap" /> property and restores its state when the page reloads. If <b>false</b>, the bitmap state is lost as soon as the page is unloaded. In this case when the page will be reloaded, the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.Bitmap" /> property will contain no bitmap.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserImageFormat" draft="yes">
+            <summary>Gets/sets the file format of the images which are sent to the browser.</summary>
+            <value>The file format of the images which are sent to the browser.</value>
+            <remarks><para>
+            Available formats are <see cref="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Jpeg" /> and <see cref="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Png" />. <b>Png</b> is an image format that employs lossless data compression and supports palette-based, grayscale and RGB images. <b>Jpeg</b> is a lossy image format which compression quality can be specified by <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserJpegQuality" /> property. If less compression is specified, an image file will have less size. Additionaly <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserImageFormat" /> property can be set to <b>Auto</b> and the control automatically determines the best image format in the following way. If the image loaded in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> is indexed or grayscale, the control sends it to a client in <b>Png</b> format, otherwise in <b>Jpeg</b>.
+          </para><para>
+            Default value is <see cref="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Auto" />.
+          </para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserJpegQuality" draft="yes">
+            <summary>Gets/sets the JPEG quality of the images which are sent to the browser when the value of the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserImageFormat" /> property is set to <see cref="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Jpeg" />.</summary>
+            <value>The JPEG quality of the images which are sent to the browser when the value of the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.BrowserImageFormat" /> property is set to <see cref="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Jpeg" />.</value>
+            <remarks><para>Default value is 70.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ContentHeight" draft="yes">
+            <summary>Gets a value that represents the height of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> values.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the height of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> content.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ContentWidth" draft="yes">
+            <summary>Gets a value that represents the width of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ScreenXDpi" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> values.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the width of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> content.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.Dispose(System.Boolean)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.GetCallbackResult" draft="yes">
+            <summary>Returns the result of a callback event that targets a control.</summary>
+            <returns>The result of the callback.</returns>
+            <remarks>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control implements the <see cref="T:System.Web.UI.ICallbackEventHandler" /> interface and uses the <see cref="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.RaiseCallbackEvent(System.String)" /> to retrieve data and the <see cref="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.GetCallbackResult" /> method to return the retrieved data to the control.</remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.GetState">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.HasContent" draft="yes">
+            <summary>Gets a value indicating if the viewer displays any content.</summary>
+            <value>The value indicating if the viewer displays any content.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ImageLoadMode" draft="yes">
+            <summary>Gets/sets a value that specifies how the image is loaded to a browser.</summary>
+            <value>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode" /> enumeration member that specifies how the image is loaded to a browser.</value>
+            <remarks><para>The following load modes are available:</para><list type="bullet"><item><term><see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.Entire" /></term><description>Whole original image is loaded including all invisible parts. Note if the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageEnabled" /> property is <b>true</b>, the image is loaded in the similar manner as a progressive JPEG loading.</description></item><item><term><see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.AdaptiveTile" /></term><description>First of all, the control loads image fragment actually visible in the client area. Then, if an user scrolls the image it loads necessary parts of an original image which are visible but not loaded yet.</description></item><item><term><see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.RegularTile" /></term><description>In this mode the original image is divided into square tiles. The tile size equals to <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.TileSize" /> property value. The control loads square fragments of the original image for corresponding tiles which are visible but not loaded yet.</description></item></list><para>If you are not going to change or modify the displayed image frequently you should use the <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.Entire" /> mode. In this case you increase an image load time and get a completely loaded image which can be scrolled without additional delays.
+If <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.AdaptiveTile" /> or <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.RegularTile" /> mode is used you will get the image inside the control significantly faster than in the <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.Entire" /> mode. But when you scroll the image you will need to wait untill the necessary fragment is loaded. <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.AdaptiveTile" /> mode allows to optimize a traffic by loading only actually visible parts of the displayed image. But it requires more server resources comparing to <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.RegularTile" /> mode.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.TileSize" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" draft="yes">
+            <summary>Processes the postback data for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control.</summary>
+            <param name="postDataKey">The index within the posted collection that references the content to load.</param>
+            <param name="postCollection">The collection posted to the server.</param>
+            <returns><b>true</b> if the posted content is different from the last posting; otherwise, <b>false</b>.</returns>
+            <remarks><para>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" /> method is used primarily by control developers.</para><para>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" /> method checks if the postback data of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control is different from its previous value, and if so, loads the content and returns <b>true</b>.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> class.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageEnabled" draft="yes">
+            <summary>Gets/sets a value which enables the low-resolution preview of the image which is displayed in the background of the control while the portion of the high-resolution image is loaded to the browser.</summary>
+            <value>The value which is <b>true</b> when low-resolution image should be used; <b>false</b> otherwise.</value>
+            <remarks><para>When preview image is generated, its width and height is divided by the value stored in the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageResizeRatio" /> property. This image is downloaded to the browser entirely and stretched at the container. After that high resolution portion of the image is downloaded to client and displayed in the viewport. This way user can preview (with very poor quality though) the portion of the image, and he can scroll to the necessary position on the image before high resolution fragment is loaded.</para><para>Default value is <b>true</b>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageResizeRatio" draft="yes">
+            <summary>Gets/sets the ratio of the original image dimensions to the dimensions of the preview image displayed in the background of the control (when enabled).</summary>
+            <value>The ratio of the original image dimensions to the dimensions of the preview image displayed in the background of the control (when enabled).</value>
+            <remarks><para>When preview image is generated, its width and height is divided by the value stored in this property. This image is downloaded to the browser entirely and stretched at the container. After that high resolution portion of the image is downloaded to client and displayed in the control. This way user can preview (with very poor quality though) the portion of the image, and he can scroll to the necessary position on the image before high resolution fragment is loaded.</para><para>The lower value you specify the higher is a resolution of the preview image. It will increase the preview image quality, but greatly increase the size.</para><para>Default value is 8 (the preview image is less in 64 times).</para></remarks>
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.PreviewImageEnabled" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.RaiseCallbackEvent(System.String)" draft="yes">
+            <summary>Creates the arguments for the callback handler.</summary>
+            <param name="eventArgument">The argument to pass to the event handler.</param>
+            <remarks>The <see cref="M:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.RaiseCallbackEvent(System.String)" /> method is a helper method used by the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control to create the arguments for the callback handler.</remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" draft="yes">
+            <summary>Get/sets a value that specifies whether to take into account the bitmap resolution (DPI) during displaying.</summary>
+            <value>The value that specifies whether to take into account the bitmap resolution (DPI) during displaying.</value>
+            <remarks><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> supports displaying image in its physical size. Actual physical size of the image is measured in metrical units (inches, centimeters) and depends on image resolution. To apply this functionality you should set <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> property to <b>true</b>. In this mode the control takes into account the resolution of the image, that allows you to display it in actual physical size when image resolution differs from monitor resolution. Also, this feature is useful for images with different vertical and horizontal resolutions, e.g. faxes.</para><note>When the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ScaleToActualSize" /> is <b>true</b> the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> will resize the image in memory before displaying it. Therefore it may cause unnecessary performance overhead if you do not care about physical resolution. That is why we recommend to use this feature only when it is actually needed.</note></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeHorizontalScale" />
+<seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ActualSizeVerticalScale" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.TileSize" draft="yes">
+            <summary>Gets/sets a value which represents width and height of tile (in pixels).</summary>
+            <value>The value which represents width and height of tile (in pixels).</value>
+            <remarks><para>If the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ImageLoadMode" /> property is set to <see cref="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.RegularTile" /> the original image is divided into square tiles. The tile size equals to <see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.TileSize" /> property value. The control loads square fragments of the original image for corresponding tiles which are visible but not loaded yet.</para><para>Tile size should depend on the displayed image dimensions and the control client area height and width.</para><para>Default value is 300.</para></remarks>
+            <seealso cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.ImageLoadMode" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.WorkspaceHeight" draft="yes">
+            <summary>Gets a value which represents the height (in pixels) of the bitmap loaded in <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" />.</summary>
+            <value>The value which represents the height (in pixels) of the bitmap loaded in <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" />.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.WorkspaceWidth" draft="yes">
+            <summary>Gets a value which represents the width (in pixels) of the bitmap loaded in <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" />.</summary>
+            <value>The value which represents the width (in pixels) of the bitmap loaded in <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" />.</value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat">
+            <summary>Specifies supported file formats used to deliver the image to the browser.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Auto" draft="yes">
+            <summary>Automatic determines the best file format based on the bitmap pixel format. For indexed bitmaps it will be the PNG format, for non-indexed - JPEG.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Jpeg" draft="yes">
+            <summary>JPEG format.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.BrowserImageFormat.Png" draft="yes">
+            <summary>PNG format.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException">
+            <summary>This exception is thrown when the control with specified ID or ClientID cannot be found (e.g. when attaching a rubberband or a navigator).</summary>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException.#ctor" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException" /> class.</summary>
+            <overloads><summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException.#ctor(System.String)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException" /> class with a specified error message.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException.#ctor(System.String,System.Exception)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException" /> class with a  with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <i>innerException</i> parameter is not a null reference, the current exception is raised in a <b>catch</b> block that handles the inner exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ControlNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.FileCache">
+            <summary>This class manages the private and public file cache used by the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" />.</summary>
+            <remarks><para>This class is used if you need to store your own files in the Graphics Mill cache (e.g. if you add some extra functionality to the web control). Using this class you can generate unique filenames and get both physical and virtual paths to these files. The Graphics Mill cache will take care about these files lifetime, etc.</para><para>The workflow for using this class is the following:</para><list type="number"><item><description>Use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetInstance" /> method. This static method returns you an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCache" /> class.  </description></item><item><description>Everytime you need to create a temporary file in the private cache (i.e. the file which should not be sent to the client), use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPrivateTempFileName(System.String)" /> method. It will generate the unique file name, append specified extension, and "register" it as a temporary file. To get a temporary file name for the public cache (i.e. the file which will be available for the download), use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPublicTempFileName(System.String)" /> method.</description></item><item><description>To create the temporary file with the name generated at the previous step, you need to get a full path (including the path to the folder which contains a cache). Methods  <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePrivateCachePath(System.String)" /> and <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePublicCachePath(System.String)" /> prepend the path to the private and public cache correspondingly.  This way you can pass the result string to the <see cref="M:Aurigma.GraphicsMill.Bitmap.Save(System.String)" /> method or any other method which creates a file.</description></item><item><description>If you need to convert a path to the temporary file into the URL, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetRelativePublicCachePath(System.String)" /> method. It will prepend the virtual path to the specified filename.</description></item></list></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePrivateCachePath(System.String)" draft="yes">
+            <summary>Prepends the physical path of the private cache folder to the specified file name.</summary>
+            <param name="fileName">A file name which should be converted to the full path in the private cache.</param>
+            <returns>A full name of the temporary file in the private cache.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePublicCachePath(System.String)" draft="yes">
+            <summary>Prepends the physical path of the public cache folder to the specified file name.</summary>
+            <param name="fileName">A file name which should be converted to the full path in the public cache.</param>
+            <returns>A full name of the temporary file in the public cache.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetInstance" draft="yes">
+            <summary>Returns an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCache" /> class.</summary>
+            <returns>An instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCache" /> class.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPrivateTempFileName(System.String)" draft="yes">
+            <summary>Generates an unique temporary file name for the private cache.</summary>
+            <param name="extension">An extension to append to the generated file name.</param>
+            <returns>An unique name of the temporary file in the private cache (without full path).</returns>
+            <remarks><para>Note, this method does not create a file with generated name. It just returns a name of the file which is guarantied unique in the private cache folder. You should create this file manually.</para><para>To get a full physical path to the private cache, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePrivateCachePath(System.String)" /> method.</para></remarks>
+            <overloads><summary>Generates an unique temporary file name for the private cache.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPrivateTempFileName(System.String,System.Boolean)" draft="yes">
+            <summary>Generates an unique temporary file or folder name for the private cache.</summary>
+            <param name="extension">An extension to append to the generated name.</param>
+            <param name="isDirectory">A <see cref="T:System.Boolean" /> value which specifies whether to generate name for a file or folder.</param>
+            <returns>An unique name of the temporary file or folder in the private cache (without full path).</returns>
+            <remarks><para>Note, this method does not create a file or folder with generated name. It just returns a name which is guarantied unique in the private cache folder. You should create this file manually.</para><para>To get a full physical path to the private cache, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePrivateCachePath(System.String)" /> method.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPublicTempFileName(System.String)" draft="yes">
+            <summary>Generates an unique temporary file name for the public cache.</summary>
+            <param name="extension">An extension to append to the generated file name.</param>
+            <returns>An unique name of the temporary file in the public cache (without full path).</returns>
+            <remarks><para>Note, this method does not create a file with generated name. It just returns a name of the file which is guarantied unique in the public cache folder. You should create this file manually.</para><para>To get a full physical path to the public cache, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePublicCachePath(System.String)" /> method. If you need to get an URL to this file (so that this file could be loaded into the browser), use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetRelativePublicCachePath(System.String)" /> method. </para></remarks>
+            <overloads><summary>Generates an unique temporary file name for the public cache.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetPublicTempFileName(System.String,System.Boolean)" draft="yes">
+            <summary>Generates an unique temporary file or folder name for the public cache.</summary>
+            <param name="extension">An extension to append to the generated name.</param>
+            <param name="isDirectory">A <see cref="T:System.Boolean" /> value which specifies whether to generate name for a file or folder.</param>
+            <returns>An unique name of the temporary file or folder in the public cache (without full path).</returns>
+            <remarks><para>Note, this method does not create a file or folder with generated name. It just returns a name which is guarantied unique in the public cache folder. You should create this file manually.</para><para>To get a full physical path to the public cache, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetAbsolutePublicCachePath(System.String)" /> method.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.GetRelativePublicCachePath(System.String)" draft="yes">
+            <summary>Prepends the relative path of the public cache folder to the specified file name.</summary>
+            <param name="fileName">A file name which should be converted to the URL in the public cache.</param>
+            <returns>The URL to the file in the public cache.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.RegisterPrivateTempFileName(System.String,System.Boolean)" draft="yes">
+            <summary>Registers the file of directory name in the private cache.</summary>
+            <param name="fileName">A file or directory name which needs to be registered in the cache.</param>
+            <param name="isDirectory">A <see cref="T:System.Boolean" /> value which specify whether to generate name for a file or folder.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCache.RegisterPublicTempFileName(System.String,System.Boolean)" draft="yes">
+            <summary>Registers the file of directory name in the public cache.</summary>
+            <param name="fileName">A file or directory name which needs to be registered in the cache.</param>
+            <param name="isDirectory">A <see cref="T:System.Boolean" /> value which specify whether to generate name for a file or folder.</param>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException">
+            <summary>This exception is thrown when the control cannot get the cache index file until timeout expires.</summary>
+            <remarks><para>Cache index file is a special file which synchronizes access to the file cache. When a control acesses the file cache, it locks this file and unlocks when it stops using it. It prevents synchronization problems if the file cache is accessed by several threads simultaneously. In this case the second thread retries to lock the index file until timeout expires (10 seconds). If it happens, this exception is thrown.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException.#ctor" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException" /> class.</summary>
+            <overloads><summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException.#ctor(System.String)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException" /> class with a specified error message.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException.#ctor(System.String,System.Exception)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException" /> class with a  with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <i>innerException</i> parameter is not a null reference, the current exception is raised in a <b>catch</b> block that handles the inner exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.FileCacheTimeoutException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ICallBackDataHandler">
+            <summary>This interface is implemented by all the controls which can change their states during execution of the callback initiated by another control.</summary>
+            <remarks>This interface has one method which returns the string used to update the client-side object corresponded to the server-side control.</remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ICallBackDataHandler.GetCallBackExecutionCode" draft="yes">
+            <summary>Returns a <see cref="T:System.String" /> which represents the current state of the control.</summary>
+            <returns>A <see cref="T:System.String" /> which represents the current state of the control.</returns>
+            <remarks>This <see cref="T:System.String" /> value can be used to update the client-side object corresponded to the server-side control.</remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode">
+            <summary>Specifies possible image loading modes for the BitmapViewer (class <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> and its descendants).</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.AdaptiveTile" draft="yes">
+            <summary>Adaptive loading algorithm is used. It determines which parts of image should be loaded and loads corresponding tiles.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.Entire" draft="yes">
+            <summary>The whole image is loaded.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ImageLoadMode.RegularTile" draft="yes">
+            <summary>The image is cut into tiles of predefined (<see cref="P:Aurigma.GraphicsMill.AjaxControls.BitmapViewer.TileSize" />) size. And only visible tiles are loaded to the client browser.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.INavigator">
+            <summary>This interface is implemented by all the navigator controls which can be attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> through the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" /> property.</summary>
+            <remarks><para>This interface has no own members. It inherits all the members from the base <see cref="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController" /> interface. In fact it is used only to mark up the control which can be used as a navigator.</para></remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.IRubberband">
+            <summary>This interface is implemented by all the rubberband controls which can be attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> through the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Rubberband" /> property.</summary>
+            <remarks><para>This interface has no own members. It inherits all the members from the base <see cref="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController" /> interface. In fact it is used only to mark up the control which can be used as a rubberband.</para></remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController">
+            <summary>This interface is implemented by all the controls which can manage user input (such as mouse events) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <remarks><para>Examples of the controls which should implement this interface are the rubberbands and the navigators. You can inherit from the <see cref="T:Aurigma.GraphicsMill.AjaxControls.UserInputController" /> class which contains the partial implementation for this interface.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.IUserInputController.Connect(Aurigma.GraphicsMill.AjaxControls.BaseViewer)" draft="yes">
+            <summary>Connects this user input controller (navigator or rubberband) to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <param name="viewer">The <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> to connect to.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.IUserInputController.Disconnect" draft="yes">
+            <summary>Disconnects this user input controller (navigator or rubberband) from the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.IUserInputController.Update" draft="yes">
+            <summary>This method is called by the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> when it needs to be repainted or updated in any other way.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.NavigatorConverter" draft="yes">
+            <summary>Converts a navigator control on the Web Forms page to a string.</summary>
+            <remarks><para>This class is necessary for a design time (it enables you to select a navigator into the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" /> property directly from the property page).</para><para>You need not use it directly.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.NavigatorConverter.IsTypeCorrect(System.Web.UI.Control)" draft="yes">
+            <summary>Check whether the control type is correct. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="control">The <see cref="T:System.Web.UI.Control" /> to check.</param>
+            <returns><b>true</b> when the control has a proper type (<see cref="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController" /> interface is supported); otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.NavigatorConverter.#ctor" draft="yes">
+            <summary>Creates new <see cref="T:Aurigma.GraphicsMill.AjaxControls.NavigatorConverter" /> class instance.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.PanNavigator">
+            <summary>This class represents a navigator which is used to pan the image inside the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <remarks><para>When this navigator is attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> using its property <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" />, it is working in the following way:</para><list type="number"><item><description>When the left button of the mouse is pressed down, it captures the control.</description></item><item><description>When control is captured and the mouse is moved, the image is panned together with mouse pointer. The callback from the server occurred only if user stops moving at least for one second.</description></item><item><description>When the left button of the mouse is released, the mouse control is dismissed.</description></item></list></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.PanNavigator.#ctor" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.PanNavigator" /> class instance.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RectangleController">
+            <summary>This is a base class for all the navigators or rubberbands which should display a rectangle.</summary>
+            <remarks><para>This class implements the functionality for displaying a rectangle rubberband. You can change the rectangle appearance with <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineColor" />, <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineWidth" />, and <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineStyle" /> properties.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.#ctor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.OnContentChanged(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.OnInit(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineColor" draft="yes">
+            <summary>Gets/sets the color of the rectangle outline.</summary>
+            <value>The color of the rectangle outline.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineStyle" draft="yes">
+            <summary>Gets/sets the rectangle outline pen style (solid, dashed, etc).</summary>
+            <value>The pen style of the rectangle outline.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleController.OutlineWidth" draft="yes">
+            <summary>Gets/sets the rectangle outline width.</summary>
+            <value>The rectangle outline width.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleController.RaisePostDataChangedEvent">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RectangleEventArgs">
+            <summary>Provides arguments for the events of the rectangle rubberband controls.</summary>
+            <remarks><para>
+This class contains single property <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleEventArgs.Rectangle" /> which contain current size of the rectangle which represents the rubberband.
+</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleEventArgs.#ctor(System.Drawing.RectangleF)" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.RectangleEventArgs" /> object.</summary>
+            <param name="rectangle">The current rectangle of the rubberband.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleEventArgs.Rectangle" draft="yes">
+            <summary>Indicates the current rectangle of the rubberband.</summary>
+            <value>The current rectangle of the rubberband.</value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband">
+            <summary>This class represents the rectangular rubberband.</summary>
+            <remarks><para>You can use this class to draw a rectangle on the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control surface. Depending on this control properties you can resize (see <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> property) or move (see <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Movable" /> property) this rectangle by the mouse. This way this rubberband is extremely useful to make a rectangular selection on the bitmap. </para><para>To get or set the rectangle (selection) programmatically, you can use property <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Rectangle" />. It will return the rectangle displayed at the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control in coordinates of the content associated with it.</para><para>The rectangle can be resized either arbitrary, or only increase or decrease the width and height equally (i.e. preserving the rectangle proportion). It is specified by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> property. The required aspect ratio is specified with the <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Ratio" /> property.</para><para>You can specify whether to display a mask which shadows the image out of the rectangle. It is convenient when you use this rubberband together with the <see cref="T:Aurigma.GraphicsMill.Transforms.Crop" /> transform. Use <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.MaskVisible" /> property for it. </para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.AutoPostBack" draft="yes">
+            <summary>Gets/sets a value indicating whether a postback to the server automatically occurs when the user stops modifying the rectangle.</summary>
+            <value>The value which is <b>true</b> when a postback to the server automatically occurs whenever the user  stops changing the rectangle; <b>false</b> otherwise.</value>
+            <remarks><para>Default value is <b>false</b>.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Erasable" draft="yes">
+            <summary>Gets/sets a value that specifies whether the rubberband can be erased (discarded) when user clicks by a mouse out of this rectangle.</summary>
+            <value>The value that specifies whether the rubberband is erased (discarded) when user clicks by a mouse out of this rectangle.</value>
+            <remarks><para>Default value is <b>true</b>.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Erase" draft="yes">
+            <summary>Erases (discards) the rubberband from the control.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.GripSize" draft="yes">
+            <summary>Gets/sets the grip size.</summary>
+            <value>The size of the grips.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.GripsVisible" draft="yes">
+            <summary>Gets/sets a value which shows or hides the grips on the rectangle.</summary>
+            <value>The value which shows or hides the grips on the rectangle.</value>
+            <remarks><para>When grips are shown, user can resize the rectangle by dragging them. When grips are hidden, user can resize the rectangle by dragging any point of the rectangle border.</para><para>Number of the grips depends on the rubberband <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" />:</para><list type="bullet"><item><description>When the arbitrary resize is enabled (<see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> = <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Arbitrary" />), eight grips are displayed: four for each rectangle corner, and four for each rectangle edge (in the center at the edge). </description></item><item><description>When the resize with only fixed proportions is enabled (<see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> = <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Proportional" />), there are four grips for each rectangle corner is available. </description></item><item><description>When the resize is disabled (<see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> = <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.None" />), no grips are displayed regardless of the <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.GripsVisible" /> value.</description></item></list></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.IsEmpty" draft="yes">
+            <summary>Gets a value that specifies whether the rubberband rectangle is empty (and therefore whether it is visible).</summary>
+            <value>The value that specifies whether the rubberband rectangle is empty.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.MaskColor" draft="yes">
+            <summary>Gets/sets the color of mask.</summary>
+            <value>The value which specifies the color of mask.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.MaskOpacity" draft="yes">
+            <summary>Gets/sets the opacity of mask.</summary>
+            <value>The value which specifies the opacity of mask.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.MaskVisible" draft="yes">
+            <summary>Gets/sets a value which specifies whether to display a mask out of the rectangle.</summary>
+            <value>The value which is <b>true</b> when mask should be displayed; otherwise, <b>false</b>.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Movable" draft="yes">
+            <summary>Gets/sets a value which specifies whether the rubberband rectangle can be dragged on the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <value>The value which specifies whether the rubberband rectangle can be dragged on the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.#ctor" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.OnRectangleChanged">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.OutlineStyle" draft="yes">
+            <summary>Gets/sets the rectangle outline pen style (solid, dashed, etc).</summary>
+            <value>The pen style of the rectangle outline.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.RaisePostBackEvent(System.String)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.RaisePostDataChangedEvent">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Ratio" draft="yes">
+            <summary>Gets/sets the aspect ratio of the rubberband rectangle which should be preserved when <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> is <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Proportional" />.</summary>
+            <value>The aspect ratio of the rubberband rectangle which should be preserved when <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" /> is <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Proportional" />.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Rectangle" draft="yes">
+            <summary>Gets/sets the rubberband rectangle.</summary>
+            <value>The rubberband rectangle.</value>
+            <remarks><para>Rectangle values (left, top, width and height) are measured in the coordinates of the content associated with the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> where it is displayed. </para></remarks>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.RectangleChanged" draft="yes">
+            <summary>Fires when the rubberband rectangle is modified (mouse button is released).</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.ResizeMode" draft="yes">
+            <summary>Gets/sets an allowed resize mode for the rubberband rectangle.</summary>
+            <value>A <see cref="T:Aurigma.GraphicsMill.AjaxControls.ResizeMode" /> enumeration member that specifies an allowed resize mode for the rubberband rectangle.</value>
+            <remarks><para>When <see cref="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Proportional" /> resize mode is used, you can specify the required aspect ratio of the rectangle using <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Ratio" /> property. </para></remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingMethodAttribute">
+            <summary>An attribute which marks the method as callable through the remote scripting mechanism.</summary>
+            <remarks><para>Adding this attribute to a method of the parent control of the BitmapViewer (for example, Page) makes the method callable from the remote Web clients. This class cannot be inherited.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingMethodAttribute.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingMethodAttribute" /> class.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException">
+            <summary>This exception is thrown when some parameter passed into the remote scripting method is null.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException.#ctor" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException" /> class.</summary>
+            <overloads><summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException.#ctor(System.String)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException" /> class with a specified error message.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException.#ctor(System.String,System.Exception)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException" /> class with a  with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <i>innerException</i> parameter is not a null reference, the current exception is raised in a <b>catch</b> block that handles the inner exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingNullReferenceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException">
+            <summary>This exception is thrown when the number of parameters passed into the remote scripting method does not match the number of parameters required by this method.</summary>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException.#ctor" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException" /> class.</summary>
+            <overloads><summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException.#ctor(System.String)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException" /> class with a specified error message.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException.#ctor(System.String,System.Exception)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException" /> class with a  with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <i>innerException</i> parameter is not a null reference, the current exception is raised in a <b>catch</b> block that handles the inner exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingParameterCountException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException">
+            <summary>This exception is thrown when the signature of the method marked with the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingMethodAttribute" /> contains an argument of the type which cannot be converted from the string.</summary>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException.#ctor" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException" /> class.</summary>
+            <overloads><summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException.#ctor(System.String)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException" /> class with a specified error message.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException.#ctor(System.String,System.Exception)" draft="yes">
+            <summary>Initializes a new instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException" /> class with a with a specified error message and a reference to the inner exception that is the cause of this exception.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <i>innerException</i> parameter is not a null reference, the current exception is raised in a <b>catch</b> block that handles the inner exception.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RemoteScriptingTypeNotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ResizeMode">
+            <summary>Specifies possible resize modes for the rectangle rubberband (class <see cref="T:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband" /> and its descendants).</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Arbitrary" draft="yes">
+            <summary>User can resize the rectangle without keeping the aspect ratio.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.None" draft="yes">
+            <summary>User cannot resize the rectangle. However you can still update <see cref="P:Aurigma.GraphicsMill.AjaxControls.RectangleRubberband.Rectangle" /> property.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ResizeMode.Proportional" draft="yes">
+            <summary>User can resize the rectangle only with fixed aspect ratio.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.RubberbandConverter">
+            <summary>Converts a rubberband control on the Web Forms page to a string.</summary>
+            <remarks><para>This class is necessary for a design time (it enables you to select a rubberband into the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Rubberband" /> property directly from the property page).</para><para>You need not use it directly.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RubberbandConverter.IsTypeCorrect(System.Web.UI.Control)" draft="yes">
+            <summary>Check whether the control type is correct. This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</summary>
+            <param name="control">The <see cref="T:System.Web.UI.Control" /> to check.</param>
+            <returns><b>true</b> when the control has a proper type (<see cref="T:Aurigma.GraphicsMill.AjaxControls.IUserInputController" /> interface is supported); otherwise, <b>false</b>.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.RubberbandConverter.#ctor" draft="yes">
+            <summary>Creates new <see cref="T:Aurigma.GraphicsMill.AjaxControls.RubberbandConverter" /> class instance.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ScrollBarsStyle">
+            <summary>Specifies values which specify when to display scroll bars at the control.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ScrollBarsStyle.Always" draft="yes">
+            <summary>Scroll bars are always displayed regardless of the control content dimensions. If control content is too small, scroll bars are disabled.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ScrollBarsStyle.Auto" draft="yes">
+            <summary>Scroll bars are displayed when control content is too large to fit the control client area. When content is too small, scroll bars are hidden.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.UserInputController" draft="yes">
+            <summary>This class is implemented by all the controls which can manage user input (such as mouse events) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <remarks><para>When you create a custom navigator or rubberband, you can inherit your class from this one, and override its protected members. Note, this class is an abstract one, you cannot instantiate it directly.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.AccessKey">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.BackColor">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.BorderColor">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.BorderStyle">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.BorderWidth">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.ContentChangedEventHandler(System.Object,System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.CssClass">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Enabled">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.EnableTheming">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Font">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.ForeColor">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Height">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.#ctor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.OnContentChanged(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.OnScrolled(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.OnZoomed(System.EventArgs)" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" /> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> object that contains the event data.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.ScrolledEventHandler(System.Object,System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.SkinID">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.TabIndex">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.ToolTip">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Viewer">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Visible">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.UserInputController.Width">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.UserInputController.ZoomedEventHandler(System.Object,System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions">
+            <summary>Exposes properties which configure automatic postback for individual events of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <remarks><para>Instances of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions" /> class are returned by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.ClientSideOptions">BaseViewer.ClientSideOptions</see> property.</para><para>Each property of this class enables or disables automatic postback for appropriate event. However if the <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack">BaseViewer.AutoPostBack</see> value is <b>true</b>, automatic postback occurs regardless of these properties values.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions.PostBackOnScrolled" draft="yes">
+            <summary>Gets/sets a value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Scrolled">BaseViewer.Scrolled</see> event on.</summary>
+            <value>The <see cref="T:System.Boolean" /> value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Scrolled">BaseViewer.Scrolled</see> event on.</value>
+            <remarks><para>If <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack">BaseViewer.AutoPostBack</see> is <b>true</b>, <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Scrolled">BaseViewer.Scrolled</see> event fires regardless of the value of this property.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions.PostBackOnWorkspaceChanged" draft="yes">
+            <summary>Gets/sets a value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceChanged">BaseViewer.WorkspaceChanged</see> event on.</summary>
+            <value>The <see cref="T:System.Boolean" /> value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceChanged">BaseViewer.WorkspaceChanged</see> event on.</value>
+            <remarks><para>If <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack">BaseViewer.AutoPostBack</see> is <b>true</b>, <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceChanged">BaseViewer.WorkspaceChanged</see> event fires regardless of the value of this property.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions.PostBackOnWorkspaceClick" draft="yes">
+            <summary>Gets/sets a value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick">BaseViewer.WorkspaceClick</see> event on.</summary>
+            <value>The <see cref="T:System.Boolean" /> value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick">BaseViewer.WorkspaceClick</see> event on.</value>
+            <remarks><para>If <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack">BaseViewer.AutoPostBack</see> is <b>true</b>, <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick">BaseViewer.WorkspaceClick</see> event fires regardless of the value of this property.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.ViewerClientSideOptions.PostBackOnZoomed" draft="yes">
+            <summary>Gets/sets a value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed">BaseViewer.Zoomed</see> event on.</summary>
+            <value>The <see cref="T:System.Boolean" /> value which turns automatic postback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed">BaseViewer.Zoomed</see> event on.</value>
+            <remarks><para>If <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.AutoPostBack">BaseViewer.AutoPostBack</see> is <b>true</b>, <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed">BaseViewer.Zoomed</see> event fires regardless of the value of this property.</para></remarks>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment">
+            <summary>Specifies possible values for alignment of viewport.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.CenterBottom" draft="yes">
+            <summary>Viewport is positioned in the middle of the bottom side.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.CenterCenter" draft="yes">
+            <summary>Viewport is positioned in the center of the viewer.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.CenterTop" draft="yes">
+            <summary>Viewport is positioned in the middle of the top side.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.LeftBottom" draft="yes">
+            <summary>Viewport is positioned in the left bottom corner.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.LeftCenter" draft="yes">
+            <summary>Viewport is positioned in the middle of the left side.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.LeftTop" draft="yes">
+            <summary>Viewport is positioned in the left top corner.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.RightBottom" draft="yes">
+            <summary>Viewport is positioned in the right bottom corner.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.RightCenter" draft="yes">
+            <summary>Viewport is positioned in the middle of the right side.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ViewportAlignment.RightTop" draft="yes">
+            <summary>Viewport is positioned in the right top corner.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs">
+            <summary>Provides data for mouse click events on content associated with <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> instance.</summary>
+            <remarks>This class is used by <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.WorkspaceClick">BaseViewer.WorkspaceClick</see> event. The class contains <see cref="P:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs.X" /> and <see cref="P:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs.Y" /> properties wich represents content related coordinates of mouse click.</remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs.#ctor(System.Double,System.Double)" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs" /> class.</summary>
+            <param name="x">X coordinate of the mouse click.</param>
+            <param name="y">Y coordinate of the mouse click.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs.X" draft="yes">
+            <summary>Gets/sets X coordinate of the mouse click.</summary>
+            <value>X coordinate of the mouse click.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.WorkspaceClickEventArgs.Y" draft="yes">
+            <summary>Gets/sets Y coordinate of the mouse click.</summary>
+            <value>Y coordinate of the mouse click.</value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ZoomInNavigator">
+            <summary>This class represents a navigator which is used to zoom the content displayed in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control in by the mouse click.</summary>
+            <remarks><para>When this navigator is attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> using its property <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" />, it is working in the following way: when the left button of the mouse is clicked, it zooms the content in.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ZoomInNavigator.#ctor" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomInNavigator" /> class instance.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ZoomMode">
+            <summary>Specifies zoom modes of the displayed image.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.BestFit" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that entire image could fit the control. If image is smaller than the control client area, the image is stretched to occupy as much area as possible.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.BestFitShrinkOnly" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that entire image could fit the control. If image is smaller than the control client area, zooming modifier is set to 1 (i.e. no zoom).</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.FitToHeight" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that the image height would be the same as the control client area height. If the image height is smaller than the control client area height, image is stretched.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.FitToHeightShrinkOnly" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that the image height would be the same as the control client area height. If image height is smaller than the control client area, zooming modifier is set to 1 (i.e. no zoom).</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.FitToWidth" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that the image width would be the same as the control client area width. If the image width is smaller than the control client area width, image is stretched.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.FitToWidthShrinkOnly" draft="yes">
+            <summary>Zoom modifier is calculated automatically so that the image width would be the same as the control client area width. If image width is smaller than the control client area, zooming modifier is set to 1 (i.e. no zoom).</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.None" draft="yes">
+            <summary>Zoom modifier is specified only manually. Use <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoom" /> property. Also, you can use some zooming navigator controls.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomMode.ZoomControl" draft="yes">
+            <summary>The control is resized to have the same client area as the image dimensions.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ZoomOutNavigator">
+            <summary>This class represents a navigator which is used to zoom the content displayed in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control out by the mouse click.</summary>
+            <remarks><para>When this navigator is attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> using its property <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" />, it is working in the following way: when the left button of the mouse is clicked, it zooms the image out.</para></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ZoomOutNavigator.#ctor" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomOutNavigator" /> class instance.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ZoomQuality">
+            <summary>Specifies zoom quality of the displayed image.</summary>
+            <remarks>Zoom with higher quality requires more resources on the server-side than lower quality zoom.</remarks>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.High" draft="yes">
+            <summary>High quality.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.Low" draft="yes">
+            <summary>Low quality.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.Medium" draft="yes">
+            <summary>Medium quality.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.ZoomQuality.ShrinkHighStretchLow" draft="yes">
+            <summary>This mode enables server-side high quality resize in the case when zoom value is lower than 1.0.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.ZoomRectangleNavigator">
+            <summary>This class represents a navigator which is used to zoom the content displayed in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control by selecting necessary portion of the content by the mouse.</summary>
+            <remarks><para>When this navigator is attached to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> using its property <see cref="P:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Navigator" />, it is working in the following way:</para><list type="number"><item><description>When the left button of the mouse is pressed down, it captures the mouse control.</description></item><item><description>When control is captured and the mouse is moved, the selection rectangle is displayed and stretched.</description></item><item><description>When the left button of the mouse is released, the control zooms the content so that the selected portion occupy as much control client area as aspect ratio allows.</description></item></list></remarks>
+            <threadsafety static="false" instance="false" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.ZoomRectangleNavigator.#ctor" draft="yes">
+            <summary>Creates and initializes new <see cref="T:Aurigma.GraphicsMill.AjaxControls.ZoomRectangleNavigator" /> class instance.</summary>
+        </member>
+    </members>
+</doc>

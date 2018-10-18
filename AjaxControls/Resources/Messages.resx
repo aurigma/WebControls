@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BaseViewer_AutoPostBack" xml:space="preserve">
+    <value>Gets/sets a value indicating whether a postback to the server automatically occurs when the user zooms or scrolls the bitmap.</value>
+  </data>
+  <data name="BaseViewer_ClientSideOptions" xml:space="preserve">
+    <value>Gets/sets values which configure automatic postback for individual events.</value>
+  </data>
+  <data name="BaseViewer_MaxZoom" xml:space="preserve">
+    <value>Gets/sets the maximum allowed zoom value.</value>
+  </data>
+  <data name="BaseViewer_MinZoom" xml:space="preserve">
+    <value>Gets/sets the minimum allowed zoom value.</value>
+  </data>
+  <data name="BaseViewer_Navigator" xml:space="preserve">
+    <value>Gets/sets the navigator control ID (i.e. value stored in the attribute id of the tag that inserts the control).</value>
+  </data>
+  <data name="BaseViewer_Rubberband" xml:space="preserve">
+    <value>Gets/sets the rubberband control ID (i.e. value stored in the attribute id of the tag that inserts the control).</value>
+  </data>
+  <data name="BaseViewer_ScaleToActualSize" xml:space="preserve">
+    <value>Get/sets value that specifies whether to take into account the image resolution (DPI) during displaying.</value>
+  </data>
+  <data name="BaseViewer_ScreenXDpi" xml:space="preserve">
+    <value>X resolution of browser window.</value>
+  </data>
+  <data name="BaseViewer_ScreenYDpi" xml:space="preserve">
+    <value>Y resolution of browser window.</value>
+  </data>
+  <data name="BaseViewer_ScrollBarsStyle" xml:space="preserve">
+    <value>Gets/sets a value that specifies when to display the scroll bars.</value>
+  </data>
+  <data name="BaseViewer_ScrollBarWidth" xml:space="preserve">
+    <value>Gets/sets a value that specifies a scroll bar width. Typically you should not modify this value (since it has optimal value for the browsers at the present time).</value>
+  </data>
+  <data name="BaseViewer_Scrolled" xml:space="preserve">
+    <value>Fires when some scroll bar was moved.</value>
+  </data>
+  <data name="BaseViewer_ViewportAlignment" xml:space="preserve">
+    <value>Gets/sets alignment of viewport.</value>
+  </data>
+  <data name="BaseViewer_WorkspaceChanged" xml:space="preserve">
+    <value>Fires when the content is changed in this viewer control.</value>
+  </data>
+  <data name="BaseViewer_WorkspaceClick" xml:space="preserve">
+    <value>Fires when the workspace displayed in the control is clicked.</value>
+  </data>
+  <data name="BaseViewer_Zoom" xml:space="preserve">
+    <value>Gets/sets the current zoom value.</value>
+  </data>
+  <data name="BaseViewer_Zoomed" xml:space="preserve">
+    <value>Fires when the content is zoomed in this viewer control.</value>
+  </data>
+  <data name="BaseViewer_ZoomMode" xml:space="preserve">
+    <value>Gets/sets the zooming behavior of the control (automatic or manual).</value>
+  </data>
+  <data name="BaseViewer_ZoomQuality" xml:space="preserve">
+    <value>Gets/sets the value that specifies a zoom quality.</value>
+  </data>
+  <data name="BitmapViewer_BitmapStateEnabled" xml:space="preserve">
+    <value>Gets/sets a value which specifies whether the bitmap specified in the Bitmap property should be stored between server roundtrips.</value>
+  </data>
+  <data name="BitmapViewer_BrowserImageFormat" xml:space="preserve">
+    <value>Gets/sets the file format of the images which are sent to the browser.</value>
+  </data>
+  <data name="BitmapViewer_BrowserJpegQuality" xml:space="preserve">
+    <value>Gets/sets the JPEG quality of the images which are sent to the browser when BrowserImageFormat is JPEG.</value>
+  </data>
+  <data name="BitmapViewer_ImageLoadMode" xml:space="preserve">
+    <value>Gets/sets mode in which image will be loaded.</value>
+  </data>
+  <data name="BitmapViewer_PreviewImageEnabled" xml:space="preserve">
+    <value>Gets/sets a value which enables the low-resolution preview of the image which is displayed in the background of the control while the portion of the high-resolution image is loaded to the browser.</value>
+  </data>
+  <data name="BitmapViewer_PreviewImageResizeRatio" xml:space="preserve">
+    <value>Gets/sets the ratio of the image stored in the Bitmap property and the preview displayed in the background of the control (when enabled).</value>
+  </data>
+  <data name="BitmapViewer_TileSize" xml:space="preserve">
+    <value>Gets/sets size of tiles in pixels.</value>
+  </data>
+  <data name="BorderWidthFormatException" xml:space="preserve">
+    <value>BorderWidth should be in pixels.</value>
+  </data>
+  <data name="BrowserImageFormat" xml:space="preserve">
+    <value>Gets/sets format of images visible into client browser.</value>
+  </data>
+  <data name="BrowserImageFormat_Auto" xml:space="preserve">
+    <value>Auto format.</value>
+  </data>
+  <data name="BrowserImageFormat_Gif" xml:space="preserve">
+    <value>Images will be rendered in 'gif' format.</value>
+  </data>
+  <data name="BrowserImageFormat_Jpeg" xml:space="preserve">
+    <value>Images will be rendered in 'jpeg' format.</value>
+  </data>
+  <data name="BrowserImageFormat_Png" xml:space="preserve">
+    <value>Images will be rendered in 'png' format.</value>
+  </data>
+  <data name="CanNotCreateAppDir" xml:space="preserve">
+    <value>Access denied when creating a subfolder of App_Data at the following location: '{0}'. App_Data is used because cache folders are not configured in web.config. Make sure that the account ASP.NET is running under has "modify" permission for this folder or configure RelativePrivateCachePath, AbsolutePrivateCachePath, and RelativePublicCachePath keys in web.config.</value>
+  </data>
+  <data name="CanNotLocateAurigmaGraphicsMillAjaxControlsSection" xml:space="preserve">
+    <value>Cannot locate the Aurigma.GraphicsMill.AjaxControls configuration section in the web.config.</value>
+  </data>
+  <data name="CanNotLocateNavigator" xml:space="preserve">
+    <value>Can't locate navigator with ID equals '{0}'.</value>
+  </data>
+  <data name="CanNotLocatePrivateCachePathKey" xml:space="preserve">
+    <value>Cannot locate the AbsolutePrivateCachePath or RelativePrivateCachePath key in the Aurigma.GraphicsMill.AjaxControls configuration section of the web.config.</value>
+  </data>
+  <data name="CanNotLocateRelativePublicCachePathKey" xml:space="preserve">
+    <value>Cannot locate the RelativePublicCachePath key in the Aurigma.GraphicsMill.AjaxControls configuration section of the web.config.</value>
+  </data>
+  <data name="CanNotLocateRubberband" xml:space="preserve">
+    <value>Can't locate rubberband with ID equals '{0}'.</value>
+  </data>
+  <data name="CanNotWriteAppDir" xml:space="preserve">
+    <value>Access denied when writing files to App_Data at the following location: '{0}'. App_Data is used because cache folders are not configured in web.config. Make sure that the account ASP.NET is running under has "modify" permission for this folder or configure RelativePrivateCachePath, AbsolutePrivateCachePath, and RelativePublicCachePath keys in web.config.</value>
+  </data>
+  <data name="CanNotWriteCacheDir" xml:space="preserve">
+    <value>Access denied when writing files to AjaxControls cache directory.  Make sure that the account ASP.NET is running under has "modify" permission for this folder.</value>
+  </data>
+  <data name="ControlIsNotNavigator" xml:space="preserve">
+    <value>'{0}' is not a Navigator control.</value>
+  </data>
+  <data name="ControlIsNotRubberband" xml:space="preserve">
+    <value>'{0}' is not a Rubberband control.</value>
+  </data>
+  <data name="DangerousInputDetected" xml:space="preserve">
+    <value>A potentially dangerous value was received from the client.</value>
+  </data>
+  <data name="ImageLoadMode" xml:space="preserve">
+    <value>Mode in which image will be loaded to client browser.</value>
+  </data>
+  <data name="ImageLoadMode_AdaptiveTile" xml:space="preserve">
+    <value>Only visible and unloaded parts of image will be loaded to client.</value>
+  </data>
+  <data name="ImageLoadMode_Entire" xml:space="preserve">
+    <value>Entrie image will be loaded to client.</value>
+  </data>
+  <data name="ImageLoadMode_RegularTile" xml:space="preserve">
+    <value>Regulat tiles for entrie image will be created and only visible tiles will be loaded to client.</value>
+  </data>
+  <data name="IncorrectParameterType" xml:space="preserve">
+    <value>Incorrect parameter type.</value>
+  </data>
+  <data name="IndexFileLockTimeoutHasExpired" xml:space="preserve">
+    <value>Cache index file lock timeout has expired. Make sure that files in the private or public cache are not locked by some process.</value>
+  </data>
+  <data name="InvalidEnumValue" xml:space="preserve">
+    <value>Enum value should be passed in remote scripting call using either its string or integer representation.</value>
+  </data>
+  <data name="JpegQualityIsOutOfRange" xml:space="preserve">
+    <value>Jpeg quality should be in the range [0..100].</value>
+  </data>
+  <data name="MaskOpacityIsOutOfRange" xml:space="preserve">
+    <value>Opacity of mask should be between 0 and 100.</value>
+  </data>
+  <data name="MaxZoomIsOutOfRange" xml:space="preserve">
+    <value>Maximum value of the zoom amount should be larger then 0.</value>
+  </data>
+  <data name="MethodRequiresParameters" xml:space="preserve">
+    <value>The method requires {0} parameters.</value>
+  </data>
+  <data name="MinZoomIsOutOfRange" xml:space="preserve">
+    <value>Minimum value of the zoom amount should be larger then 0.</value>
+  </data>
+  <data name="NullReferenceException" xml:space="preserve">
+    <value>Parameter {0} passed to {1} should not be null.</value>
+  </data>
+  <data name="OutputParametersAreNotSupported" xml:space="preserve">
+    <value>Output parameters are not supported.</value>
+  </data>
+  <data name="PreviewImageResizeRatioOutOfRange" xml:space="preserve">
+    <value>The value should be in range [1..500].</value>
+  </data>
+  <data name="PrivateCacheDirDoesNotExist" xml:space="preserve">
+    <value>Private cache folder '{0}' does not exist. Make sure that AbsolutePrivateCachePath or RelativePrivateCachePath key of web.config specifies proper path to private cache and that "modify" permission is granted for this folder to the account ASP.NET is running under.</value>
+  </data>
+  <data name="PublicCacheDirDoesNotExist" xml:space="preserve">
+    <value>Public cache folder '{0}' does not exist. Make sure that RelativePublicCachePath key of web.config specifies proper path to public cache and that "modify" permission is granted for this folder to the account ASP.NET is running under.</value>
+  </data>
+  <data name="RectangleController_OutlineColor" xml:space="preserve">
+    <value>Gets/sets the color of the rectangle outline.</value>
+  </data>
+  <data name="RectangleController_OutlineStyle" xml:space="preserve">
+    <value>Gets/sets the rectangle outline pen style (solid, dashed, etc).</value>
+  </data>
+  <data name="RectangleController_OutlineWidth" xml:space="preserve">
+    <value>Gets/sets the rectangle outline width.</value>
+  </data>
+  <data name="RectangleRubberband_AutoPostBack" xml:space="preserve">
+    <value>Gets/sets a value indicating whether a postback to the server automatically occurs when the user stops modifying the rectangle.</value>
+  </data>
+  <data name="RectangleRubberband_Erasable" xml:space="preserve">
+    <value>Gets/sets a value that specifies whether the rubberband can be erased (discarded) when user clicks by a mouse out of this rectangle.</value>
+  </data>
+  <data name="RectangleRubberband_GripSize" xml:space="preserve">
+    <value>Gets/sets the grip size.</value>
+  </data>
+  <data name="RectangleRubberband_GripsVisible" xml:space="preserve">
+    <value>Gets/sets a value which shows or hides the grips on the rectangle.</value>
+  </data>
+  <data name="RectangleRubberband_MaskColor" xml:space="preserve">
+    <value>Color of mask.</value>
+  </data>
+  <data name="RectangleRubberband_MaskOpacity" xml:space="preserve">
+    <value>Opacity of mask.</value>
+  </data>
+  <data name="RectangleRubberband_MaskVisible" xml:space="preserve">
+    <value>Gets/sets a value which specifies whether to display a mask out of the rectangle.</value>
+  </data>
+  <data name="RectangleRubberband_Movable" xml:space="preserve">
+    <value>Gets/sets a value which specifies whether the rubberband rectangle can be dragged on the BitmapViewer control.</value>
+  </data>
+  <data name="RectangleRubberband_Ratio" xml:space="preserve">
+    <value>Gets/sets the aspect ratio of the rubberband rectangle which should be preserved when ResizeMode is Proportional.</value>
+  </data>
+  <data name="RectangleRubberband_Rectangle" xml:space="preserve">
+    <value>Gets/sets a rubberband rectangle.</value>
+  </data>
+  <data name="RectangleRubberband_RectangleChanged" xml:space="preserve">
+    <value>Fires when the rubberband rectangle is modified (mouse button is released).</value>
+  </data>
+  <data name="RectangleRubberband_ResizeMode" xml:space="preserve">
+    <value>Gets/sets an allowed resize mode for the rubberband rectangle.</value>
+  </data>
+  <data name="ReferencedControlNotFound" xml:space="preserve">
+    <value>Unable to find control id '{0}'.</value>
+  </data>
+  <data name="ResizeMode" xml:space="preserve">
+    <value>Resize mode.</value>
+  </data>
+  <data name="ResizeMode_Arbitrary" xml:space="preserve">
+    <value>Width and height will be changed arbitrary during resize.</value>
+  </data>
+  <data name="ResizeMode_None" xml:space="preserve">
+    <value>Width and height will not be changed. This disables resize.</value>
+  </data>
+  <data name="ResizeMode_Proportional" xml:space="preserve">
+    <value>Width and height will be changed proportionally during resize.</value>
+  </data>
+  <data name="ReturnValueParametersAreNotSupported" xml:space="preserve">
+    <value>Retval parameters are not supported.</value>
+  </data>
+  <data name="ScriptManagerNotFound" xml:space="preserve">
+    <value>A ScriptManager control must exist on the current page.</value>
+  </data>
+  <data name="ScrollBarsStyle" xml:space="preserve">
+    <value>Style of ScrollBars.</value>
+  </data>
+  <data name="ScrollBarsStyle_Always" xml:space="preserve">
+    <value>ScrollBars will be visible always.</value>
+  </data>
+  <data name="ScrollBarsStyle_Auto" xml:space="preserve">
+    <value>ScrollBars will be visible if it is necessary.</value>
+  </data>
+  <data name="TileSizeOutOfRange" xml:space="preserve">
+    <value>The tile size should not be small then 20.</value>
+  </data>
+  <data name="TypeNotSupportedForMarshalling" xml:space="preserve">
+    <value>'{0}' type is not supported for the remote scripting marshalling.</value>
+  </data>
+  <data name="ViewerClientSideOptions_PostBackOnScrolled" xml:space="preserve">
+    <value>Gets/sets a value which turns automatic postback for the Scrolled event.</value>
+  </data>
+  <data name="ViewerClientSideOptions_PostBackOnWorkspaceChanged" xml:space="preserve">
+    <value>Gets/sets a value which turns automatic postback for the BitmapChanged event.</value>
+  </data>
+  <data name="ViewerClientSideOptions_PostBackOnWorkspaceClick" xml:space="preserve">
+    <value>Gets/sets a value which turns automatic postback for the Click event.</value>
+  </data>
+  <data name="ViewerClientSideOptions_PostBackOnZoomed" xml:space="preserve">
+    <value>Gets/sets a value which turns automatic postback for the Zoomed event.</value>
+  </data>
+  <data name="ViewportAlignment" xml:space="preserve">
+    <value>Content alignment inside the control.</value>
+  </data>
+  <data name="ViewportAlignment_CenterBottom" xml:space="preserve">
+    <value>The content is aligned by the center horizontally and by the bottom vertically.</value>
+  </data>
+  <data name="ViewportAlignment_CenterCenter" xml:space="preserve">
+    <value>The content is aligned by the center horizontally and by the center vertically.</value>
+  </data>
+  <data name="ViewportAlignment_CenterTop" xml:space="preserve">
+    <value>The content is aligned by the center horizontally and by the top vertically.</value>
+  </data>
+  <data name="ViewportAlignment_LeftBottom" xml:space="preserve">
+    <value>The content is aligned by the left side horizontally and by the bottom vertically.</value>
+  </data>
+  <data name="ViewportAlignment_LeftCenter" xml:space="preserve">
+    <value>The content is aligned by the left side horizontally and by the center vertically.</value>
+  </data>
+  <data name="ViewportAlignment_LeftTop" xml:space="preserve">
+    <value>The content is aligned by the left side horizontally and by the top vertically.</value>
+  </data>
+  <data name="ViewportAlignment_RightBottom" xml:space="preserve">
+    <value>The content is aligned by the right side horizontally and by the bottom vertically.</value>
+  </data>
+  <data name="ViewportAlignment_RightCenter" xml:space="preserve">
+    <value>The content is aligned by the right side horizontally and by the center vertically.</value>
+  </data>
+  <data name="ViewportAlignment_RightTop" xml:space="preserve">
+    <value>The content is aligned by the right side horizontally and by the top vertically.</value>
+  </data>
+  <data name="ZoomMode" xml:space="preserve">
+    <value>Zoom mode.</value>
+  </data>
+  <data name="ZoomMode_BestFit" xml:space="preserve">
+    <value>Best fit.</value>
+  </data>
+  <data name="ZoomMode_BestFitShrinkOnly" xml:space="preserve">
+    <value>Best fit shrink only.</value>
+  </data>
+  <data name="ZoomMode_FitToHeight" xml:space="preserve">
+    <value>Fit ti height.</value>
+  </data>
+  <data name="ZoomMode_FitToHeightShrinkOnly" xml:space="preserve">
+    <value>Fit to height shrink only.</value>
+  </data>
+  <data name="ZoomMode_FitToWidth" xml:space="preserve">
+    <value>Fit to width.</value>
+  </data>
+  <data name="ZoomMode_FitToWidthShrinkOnly" xml:space="preserve">
+    <value>Fit to width shrink only.</value>
+  </data>
+  <data name="ZoomMode_None" xml:space="preserve">
+    <value>None.</value>
+  </data>
+  <data name="ZoomMode_ZoomControl" xml:space="preserve">
+    <value>Change width and height of control to show full image with Zoom equal 1.</value>
+  </data>
+  <data name="ZoomQuality" xml:space="preserve">
+    <value>Quality of zoom.</value>
+  </data>
+  <data name="ZoomQuality_High" xml:space="preserve">
+    <value>High quality.</value>
+  </data>
+  <data name="ZoomQuality_Low" xml:space="preserve">
+    <value>Low quality.</value>
+  </data>
+  <data name="ZoomQuality_Medium" xml:space="preserve">
+    <value>Medium quality.</value>
+  </data>
+  <data name="ZoomQuality_ShrinkHighStretchLow" xml:space="preserve">
+    <value>Shrink high stretch low.</value>
+  </data>
+  <data name="RulerScaleOutOfRange" xml:space="preserve">
+    <value>RulerScale should be greater 0.</value>
+  </data>
+</root>

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B342752-5181-4542-9109-355875DE985B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Aurigma.GraphicsMill.AjaxControls</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aurigma.GraphicsMill.AjaxControls</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Aurigma.GraphicsMill.AjaxControls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\TestWebSite\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET20</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aurigma.GraphicsMill, Version=9.3.37.0, Culture=neutral, PublicKeyToken=f4bbbf243f314012, processorArchitecture=x86">
+      <HintPath>..\packages\Aurigma.GraphicsMill.Core.x86.9.3.37\lib\net40\Aurigma.GraphicsMill.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseViewer\ControlNotFoundException.cs" />
+    <Compile Include="BaseViewer\JqueryMode.cs" />
+    <Compile Include="BaseViewer\RemoteScriptingNullReferenceException.cs" />
+    <Compile Include="BaseViewer\WorkspaceClickEventArgs.cs" />
+    <Compile Include="BaseViewer\RemoteScriptingTypeNotSupportedException.cs" />
+    <Compile Include="BaseViewer\RemoteScriptingMethodAttribute.cs" />
+    <Compile Include="BaseViewer\RemoteScriptingParameterCountException.cs" />
+    <Compile Include="BaseViewer\RubberbandConverter.cs" />
+    <Compile Include="BaseViewer\NavigatorConverter.cs" />
+    <Compile Include="Common\BaseControlConverter.cs" />
+    <Compile Include="BaseViewer\ViewportAlignment.cs" />
+    <Compile Include="BitmapViewer\BitmapViewer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseViewer\BrowserImageFormat.cs" />
+    <Compile Include="BaseViewer\ViewerClientSideOptions.cs" />
+    <Compile Include="BaseViewer\ZoomMode.cs" />
+    <Compile Include="BaseViewer\ZoomQuality.cs" />
+    <Compile Include="BaseViewer\ScrollBarsStyle.cs" />
+    <Compile Include="BitmapViewer\WebImageLoader.cs" />
+    <Compile Include="BitmapViewer\ImageLoadMode.cs" />
+    <Compile Include="Common\ICallBackDataHandler.cs" />
+    <Compile Include="Common\IConfiguration.cs" />
+    <Compile Include="Common\Logger\FileLogger.cs" />
+    <Compile Include="Common\Logger\ILogger.cs" />
+    <Compile Include="Common\Logger\NullLogger.cs" />
+    <Compile Include="Controllers\PanNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\BaseScriptControl.cs" />
+    <Compile Include="Controllers\RectangleEventArgs.cs" />
+    <Compile Include="Controllers\INavigator.cs" />
+    <Compile Include="Controllers\IRubberband.cs" />
+    <Compile Include="Controllers\UserInputController.cs" />
+    <Compile Include="Controllers\ResizeMode.cs" />
+    <Compile Include="Controllers\ZoomInNavigator.cs" />
+    <Compile Include="Controllers\RectangleController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\RectangleRubberband.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\IUserInputController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ZoomOutNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ZoomRectangleNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Common.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ResDescriptionAttribute.cs" />
+    <Compile Include="FileCache\FileCacheItem.cs" />
+    <Compile Include="FileCache\FileCacheTimeoutException.cs" />
+    <Compile Include="FileCache\FileCacheVirtualFile.cs" />
+    <Compile Include="FileCache\FileCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Resources\FileCacheHandlerPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </EmbeddedResource>
+    <Compile Include="FileCache\FileCachePathProvider.cs" />
+    <Compile Include="BaseViewer\BaseViewer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileCache\IFileCache.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Content Include="ClientScripts\BaseViewer.js" />
+    <Content Include="ClientScripts\BitmapViewer.js" />
+    <Content Include="ClientScripts\Common.js" />
+    <Content Include="ClientScripts\Controller.js" />
+    <Content Include="ClientScripts\Rhino\custom_rhino.jar" />
+    <EmbeddedResource Include="Resources\BitmapViewer.bmp" />
+    <EmbeddedResource Include="Resources\BaseViewer.js" />
+    <EmbeddedResource Include="Resources\Background.gif" />
+    <EmbeddedResource Include="Resources\PanNavigator.bmp" />
+    <EmbeddedResource Include="Resources\PanNavigator.gif" />
+    <EmbeddedResource Include="Resources\RectangleRubberband.bmp" />
+    <EmbeddedResource Include="Resources\RectangleRubberband.gif" />
+    <EmbeddedResource Include="Resources\ZoomInNavigator.bmp" />
+    <EmbeddedResource Include="Resources\ZoomInNavigator.gif" />
+    <EmbeddedResource Include="Resources\ZoomOutNavigator.bmp" />
+    <EmbeddedResource Include="Resources\ZoomOutNavigator.gif" />
+    <EmbeddedResource Include="Resources\ZoomRectangleNavigator.bmp" />
+    <EmbeddedResource Include="Resources\ZoomRectangleNavigator.gif" />
+    <EmbeddedResource Include="Resources\BaseViewer.debug.js" />
+    <EmbeddedResource Include="Resources\BitmapViewer.debug.js" />
+    <EmbeddedResource Include="Resources\Common.debug.js" />
+    <EmbeddedResource Include="Resources\Controller.debug.js" />
+    <EmbeddedResource Include="Resources\jquery.debug.js" />
+    <EmbeddedResource Include="Resources\jquery.hammer.debug.js" />
+    <EmbeddedResource Include="Resources\jquery.hammer.js" />
+    <EmbeddedResource Include="Resources\jquery.js" />
+    <EmbeddedResource Include="Resources\RevertJquery.js" />
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Pan.cur" />
+    <EmbeddedResource Include="Resources\Select.cur" />
+    <EmbeddedResource Include="Resources\ZoomRectangle.cur" />
+    <EmbeddedResource Include="Resources\ZoomIn.cur" />
+    <EmbeddedResource Include="Resources\ZoomOut.cur" />
+    <EmbeddedResource Include="Resources\BitmapViewer.js" />
+    <EmbeddedResource Include="Resources\Common.js" />
+    <EmbeddedResource Include="Resources\Controller.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+			copy "$(ProjectDir)ClientScripts\BaseViewer.js" "$(ProjectDir)Resources\BaseViewer.debug.js"
+			copy "$(ProjectDir)ClientScripts\BitmapViewer.js" "$(ProjectDir)Resources\BitmapViewer.debug.js"
+			copy "$(ProjectDir)ClientScripts\Common.js" "$(ProjectDir)Resources\Common.debug.js"
+			copy "$(ProjectDir)ClientScripts\Controller.js" "$(ProjectDir)Resources\Controller.debug.js"
+
+			$(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)ClientScripts\BaseViewer.js" -out "$(ProjectDir)Resources\BaseViewer.js"
+			$(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)ClientScripts\BitmapViewer.js" -out "$(ProjectDir)Resources\BitmapViewer.js"
+			$(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)ClientScripts\Common.js" -out "$(ProjectDir)Resources\Common.js"
+			$(ProjectDir)..\AjaxMin.exe -term -clobber "$(ProjectDir)ClientScripts\Controller.js" -out "$(ProjectDir)Resources\Controller.js"
+		</PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

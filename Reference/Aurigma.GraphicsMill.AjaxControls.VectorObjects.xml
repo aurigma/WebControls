@@ -1,0 +1,1709 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aurigma.GraphicsMill.AjaxControls.VectorObjects</name>
+    </assembly>
+    <members>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer">
+            <summary>This class represents a scrollable viewport web control for vector objects.</summary>
+            <remarks><para>This class is intended to display multi-layered vector images. It allows zooming and scrolling the displayed image and supports undo and redo of actions.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ActualSizeHorizontalScale" draft="yes">
+            <summary>Gets value which represents the ratio of screen horizontal resolution to the canvas resolution.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the ratio of screen horizontal resolution to the canvas resolution.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ActualSizeVerticalScale" draft="yes">
+            <summary>Gets value which represents the ratio of screen vertical resolution to the canvas resolution.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the ratio of screen vertical resolution to the canvas resolution.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.Canvas" draft="yes">
+            <summary>Gets the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> value associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ContentHeight" draft="yes">
+            <summary>Gets a value that represents the height (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ScreenXDpi" /> and zoom value.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the height (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ContentWidth" draft="yes">
+            <summary>Gets a value that represents the width (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content taking into account its <see cref="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ScreenYDpi" /> and zoom value.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents the width (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ControlToWorkspace(System.Drawing.PointF)" draft="yes">
+            <summary>Translates point coordinates from the control-related coordinate system to the workspace-related one.</summary>
+            <param name="point">Point coordinates in the control coordinate system.</param>
+            <returns>The <see cref="T:System.Drawing.PointF" /> value which represents point coordinates in the workspace coordinate system.</returns>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceToControl(System.Drawing.PointF)" />
+            <overloads><summary>Translates coordinates from the control-related coordinate system to the workspace-related one.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ControlToWorkspace(System.Drawing.RectangleF)" draft="yes">
+            <summary>Translates rectangle coordinates from the control-related coordinate system to the workspace-related one.</summary>
+            <param name="rect">Rectangle coordinates in the control coordinate system.</param>
+            <returns>The <see cref="T:System.Drawing.RectangleF" /> value which represents rectangle coordinates in the workspace coordinate system.</returns>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceToControl(System.Drawing.RectangleF)" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.GetCallbackResult" draft="yes">
+            <summary>Returns the result of a callback event that targets a control.</summary>
+            <returns><para>The <see cref="T:System.String" /> value which represents a result of the callback.</para></returns>
+            <remarks><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> control uses the <see cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.RaiseCallbackEvent(System.String)" /> method to retrieve data and the <see cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.GetCallbackResult" /> method to return the retrieved data to the control.</para></remarks>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.RaiseCallbackEvent(System.String)" />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.GetScriptReferences" draft="yes">
+            <summary>Returns script files for the control.</summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection that contains JavaScript files that have been registered as embedded resources.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.GetState">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> class.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.OnZoomed" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" /> event.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.RaiseCallbackEvent(System.String)" draft="yes">
+            <summary>Raises events for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> control when a form is posted back to the server.</summary>
+            <param name="eventArgument">A string representation for the index of the list item that raised the event.</param>
+            <remarks><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> control uses the <see cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.RaiseCallbackEvent(System.String)" /> method to retrieve data and the <see cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.GetCallbackResult" /> method to return the retrieved data to the control.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ScreenXDpi" draft="yes">
+            <summary>Gets a horizontal resolution in DPI used to display the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content in a browser.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the screen horizontal resolution.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ScreenYDpi" draft="yes">
+            <summary>Gets a vertical resolution in DPI used to display the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> content in a browser.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the screen vertical resolution.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceHeight" draft="yes">
+            <summary>Gets a value that represents the height (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents the height (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceToControl(System.Drawing.PointF)" draft="yes">
+            <summary>Translates point coordinates from the workspace-related coordinate system to the control-related one.</summary>
+            <param name="point">Point coordinates in the workspace coordinate system.</param>
+            <returns>The <see cref="T:System.Drawing.PointF" /> value which represents point coordinates in the control coordinate system.</returns>
+            <overloads><summary>Translates coordinates from the workspace-related coordinate system to the control-related one.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceToControl(System.Drawing.RectangleF)" draft="yes">
+            <summary>Translates rectangle coordinates from the workspace-related coordinate system to the control-related one.</summary>
+            <param name="rect">Rectangle coordinates in the workspace coordinate system.</param>
+            <returns>The <see cref="T:System.Drawing.RectangleF" /> value which represents rectangle coordinates in the control coordinate system.</returns>
+            <seealso cref="M:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.ControlToWorkspace(System.Drawing.RectangleF)" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.CanvasViewer.WorkspaceWidth" draft="yes">
+            <summary>Gets a value that represents the width (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents the width (in pixels) of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />.</para></value>
+        </member>
+        <member name="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects" draft="yes">
+            <summary>The <see cref="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects" /> is a root namespace of the AJAX Vector Objects.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" draft="yes">
+            <summary>This is a base class for all the AJAX Vector Objects which have bounds.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.Angle" draft="yes">
+            <summary>Gets or sets an angle (in degrees) to rotate the rectangle on.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a rotation angle.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.Bounds" draft="yes">
+            <summary>Gets the size and location (in points) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> relatively to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> it belongs to.</summary>
+            <value><para>The <see cref="T:System.Drawing.RectangleF" /> which represents the size and location of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> relatively to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> it belongs to.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.#ctor(System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> class with the specified settings.</summary>
+            <param name="left">The x-coordinate of the upper-left corner of the rectangle to create.</param>
+            <param name="top">The y-coordinate of the upper-left corner of the rectangle to create.</param>
+            <param name="width">The width of the rectangle to create.</param>
+            <param name="height">The height of the rectangle to create.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.#ctor(System.Drawing.RectangleF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject" /> class with the specified <see cref="T:System.Drawing.RectangleF" />.</summary>
+            <param name="rectangle">The <see cref="T:System.Drawing.RectangleF" /> structure that represents the rectangle to create.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.BaseRectangleVObject.Rectangle" draft="yes">
+            <summary>Gets or sets a rectangle and its rotation angle.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> value which specifies a rectangle and its rotation angle.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CalloutVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" draft="yes">
+            <summary>This class represents the main host object which contains a stack of layers.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CanvasClientSideOptions" draft="yes">
+            <summary>Gets or sets value which configures callback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" /> event.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CanvasClientSideOptions" /> class instance which provides an access to property which configures callback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" /> event.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Clear" draft="yes">
+            <summary>Clears all the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection" /> instances associated with this canvas.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CmykColorProfile" draft="yes">
+            <summary>Gets or sets a CMYK color profile used to render the workspace.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> used to render the workspace.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ConstrainedMarginEnabled" draft="yes">
+            <summary>Gets or sets the value indicating whether it is possible to move v-objects beyond the bounds of the canvas.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value that specifies whether it is possible to move v-objects beyond the bounds of the canvas.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentLayer" draft="yes">
+            <summary>Gets the currently selected layer.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> which is currently selected in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</para></value>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentLayerChanged" draft="yes">
+            <summary>Fires when the currently selected layer is changed.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentLayerIndex" draft="yes">
+            <summary>Gets or sets an index of the currently selected layer.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents an index of the currently selected layer.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObject" draft="yes">
+            <summary>Gets the currently selected v-object.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> which is currently selected in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</para></value>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" draft="yes">
+            <summary>Fires when the currently selected v-object is changed.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectIndex" draft="yes">
+            <summary>Gets or sets an index of the currently selected v-object.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents an index of the currently selected v-object.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <value>The <see cref="T:System.String" /> value which represents a serialized data of this canvas.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Deserialize(System.String)" draft="yes">
+            <summary>Deserializes the canvas and its layers.</summary>
+            <param name="serializedData">The <see cref="T:System.String" /> that contains the serialized data.</param>
+            <remarks><para>To save the canvas as serialization data, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Serialize" /> method.</para></remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.GetScriptDescriptors" draft="yes">
+            <summary>Returns a list of components, behaviors, and client controls that are required for the client-side functionality of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection that contains <see cref="T:System.Web.UI.ScriptDescriptor" /> objects.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.GetScriptReferences" draft="yes">
+            <summary>Returns script files for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection that contains JavaScript files that have been registered as embedded resources.</returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.GrayscaleColorProfile" draft="yes">
+            <summary>Gets or sets a grayscale color profile used to render the workspace.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> used to render the workspace.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.History" draft="yes">
+            <summary>Gets a <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" /> object associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" /> which traces modifications of this canvas content.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.IsSquaredBackground" draft="yes">
+            <summary>Gets or sets the value indicating if the background of the canvas is squared.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the background of the canvas is squared.</para><para>Default value is <strong>true</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Layers" draft="yes">
+            <summary>Gets a collection of layers associated with this canvas.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection" /> which represents a collection of layers associated with this canvas.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" draft="yes">
+            <summary>Processes post back data for the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />. No need to use this method explicitly.</summary>
+            <param name="postDataKey">The key identifier for the control.</param>
+            <param name="postCollection">The collection of all incoming name values.</param>
+            <returns><strong>true</strong> if the server control's state changes as a result of the post back; otherwise <strong>false</strong>.</returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Margin" draft="yes">
+            <summary>Gets or sets the outer margin of the canvas.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a margin of the canvas.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.MarginColor" draft="yes">
+            <summary>Gets or sets a color of the outer margin of the canvas.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of the margin of the canvas.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.MarginWidth" draft="yes">
+            <summary>Gets or sets a width of the outer margin of the canvas.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of the margin of the canvas.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.MultipleSelectionEnabled" draft="yes">
+            <summary>Gets or sets a value indicating whether multiple object selection on Canvas is allowed.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value that specifies whether multiple object selection on Canvas is allowed.</para><para>To select several objects on Canvas, press <strong>ctrl</strong> and click each object.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> class.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.OnInit(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.OnPreRender(System.EventArgs)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.OnZoomChanged" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ZoomChanged" /> event.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.PreviewColorManagementEnabled" draft="yes">
+            <summary>Gets or sets the value indicating whether to use color management when displaying images.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to use color management when displaying images.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.PrintColorManagementEnabled" draft="yes">
+            <summary>Gets or sets the value indicating whether to use color management when rendering the workspace.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to use color management when rendering the workspace.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.RaisePostDataChangedEvent" draft="yes">
+            <summary>Signals the server control object to notify the ASP.NET application that the state of the control has changed. No need to use this method explicitly.</summary>
+            <remarks>This method is called by ASP.NET infrastructure. No need to use it directly.</remarks>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.RenderWorkspace(System.Single,Aurigma.GraphicsMill.ColorSpace)" draft="yes">
+            <summary>Renders all v-object in the workspace into a raster image with the specified resolution and color space.</summary>
+            <param name="dpi">The resolution in DPI of the result image.</param>
+            <param name="colorSpace">The destination color space.</param>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.Bitmap" /> containing the result image.</para></returns>
+            <overloads><summary>Saves all the design information except undo/redo history.</summary></overloads>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ResizeGripColor" draft="yes">
+            <summary>Gets or set the resize grip color.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of the resize grip.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ResizeGripSize" draft="yes">
+            <summary>Gets or set the resize grip width.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of the resize grip.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ReturnValue" draft="yes">
+            <summary>Gets or sets the value returned by remote scripting method.</summary>
+            <value><para>The return value string.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.RgbColorProfile" draft="yes">
+            <summary>Gets or sets a RGB color profile used to render the workspace.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> used to render the workspace.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.RotationGripColor" draft="yes">
+            <summary>Gets or set the rotation grip color.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of the rotation grip.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.RotationGripSize" draft="yes">
+            <summary>Gets or set the rotation grip width.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of the rotation grip.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ScreenXDpi" draft="yes">
+            <summary>Gets a horizontal resolution in DPI used to display the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> in a browser.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the screen horizontal resolution.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ScreenYDpi" draft="yes">
+            <summary>Gets a vertical resolution in DPI used to display the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> in a browser.</summary>
+            <value>The <see cref="T:System.Single" /> value which represents the screen vertical resolution.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Serialize" draft="yes">
+            <summary>Serializes the canvas and its layers.</summary>
+            <returns>The <see cref="T:System.String" /> that keeps the serialized data.</returns>
+            <remarks><para>To restore the canvas from the serialization data, use the <see cref="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Deserialize(System.String)" /> method.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Tags" draft="yes">
+            <summary>Gets or sets custom data.</summary>
+            <value><para>The custom data dictionary.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.WorkspaceHeight" draft="yes">
+            <summary>Gets a value that represents the height (in pixels) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents the height (in pixels) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.WorkspaceWidth" draft="yes">
+            <summary>Gets a value that represents the width (in pixels) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents the width (in pixels) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.Zoom" draft="yes">
+            <summary>Gets or sets the current zoom value.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents the current zoom value.</para></value>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.ZoomChanged" draft="yes">
+            <summary>Fires when zoom of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> is changed.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CanvasClientSideOptions" draft="yes">
+            <summary>Exposes the property which configures callback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" /> event.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CanvasClientSideOptions.CallbackOnVObjectChanged" draft="yes">
+            <summary>Gets or sets a value which turns callback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" /> event on.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which turns callback for the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas.CurrentVObjectChanged" /> event on.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CanvasClientSideOptions.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.CanvasClientSideOptions" /> class.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1">
+            <summary>Represents a collection of items that can be accessed by index.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1.Item(System.Int32)" draft="yes">
+            <summary>Gets or sets the item at the specified index.</summary>
+            <param name="index">The zero-based index of the item to get or set.</param>
+            <value>The item at the specified index.</value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1.Move(System.Int32,System.Int32)" draft="yes">
+            <summary>Moves an item from one position to another.</summary>
+            <param name="oldIndex">The zero-based index of the item to move.</param>
+            <param name="newIndex">The zero-based index to move the item to.</param>
+            <returns><para>The item that was moved.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Collection`1" /> class.</summary></overloads>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.CmykColorProfile" draft="yes">
+            <summary>Gets/sets a CMYK color profile.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a CMYK color profile.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.CmykColorProfileFileName" draft="yes">
+            <summary>Gets/sets a CMYK color profile file name.</summary>
+            <value><para>The <see cref="T:System.String" /> which contains a path to a CMYK color profile.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GetCmykColorProfile" draft="yes">
+            <summary>Returns a CMYK color profile specified by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.CmykColorProfileFileName" /> property or creates a new one.</summary>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a CMYK color profile.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GetGrayscaleColorProfile" draft="yes">
+            <summary>Returns a grayscale color profile specified by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GrayscaleColorProfileFileName" /> property or creates a new one.</summary>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a grayscale color profile.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GetRgbColorProfile" draft="yes">
+            <summary>Returns a RGB color profile specified by the <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.RgbColorProfileFileName" /> property or creates a new one.</summary>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a RGB color profile.</para></returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GrayscaleColorProfile" draft="yes">
+            <summary>Gets/sets a grayscale color profile.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a grayscale color profile.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.GrayscaleColorProfileFileName" draft="yes">
+            <summary>Gets/sets a grayscale color profile file name.</summary>
+            <value><para>The <see cref="T:System.String" /> which contains a path to a grayscale color profile.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.RgbColorProfile" draft="yes">
+            <summary>Gets/sets a RGB color profile.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.ColorProfile" /> value which represents a RGB color profile.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ColorManagement.RgbColorProfileFileName" draft="yes">
+            <summary>Gets/sets a RGB color profile file name.</summary>
+            <value><para>The <see cref="T:System.String" /> which contains a path to a RGB color profile.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common">
+            <summary>Exposes helper methods used in AJAX Vector Objects.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ConvertPixelsToPoints(System.Single,System.Int32)" draft="yes">
+            <summary>Converts a specified value in pixels to points using the specified dpi.</summary>
+            <param name="dpi">Resolution used for conversion.</param>
+            <param name="pixels">Number in pixels to convert.</param>
+            <returns><para>The <see cref="T:System.Single" /> value in points equivalent to the <paramref name="pixels" /> value.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ConvertPointsToPixels(System.Single,System.Single)" draft="yes">
+            <summary>Converts a specified value in points to pixels using the specified dpi.</summary>
+            <param name="dpi">Resolution used for conversion.</param>
+            <param name="points">Value in points to convert.</param>
+            <returns><para>The <see cref="T:System.Int32" /> value in pixels equivalent to the <paramref name="points" /> value.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ConvertToCmyk(Aurigma.GraphicsMill.Bitmap,Aurigma.GraphicsMill.ColorProfile,Aurigma.GraphicsMill.ColorProfile,Aurigma.GraphicsMill.ColorProfile)" draft="yes">
+            <summary>Converts the bitmap to CMYK color space using the specified color profiles.</summary>
+            <param name="bitmap">The bitmap to convert.</param>
+            <param name="rgb">The RGB color profile used for conversion.</param>
+            <param name="cmyk">The CMYK color profile used for conversion.</param>
+            <param name="grayscale">The grayscale color profile used for conversion.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ConvertToRgb(Aurigma.GraphicsMill.Bitmap,Aurigma.GraphicsMill.ColorProfile,Aurigma.GraphicsMill.ColorProfile,Aurigma.GraphicsMill.ColorProfile)" draft="yes">
+            <summary>Converts the bitmap to RGB color space using the specified color profiles.</summary>
+            <param name="bitmap">The bitmap to convert.</param>
+            <param name="rgb">The RGB color profile used for conversion.</param>
+            <param name="cmyk">The CMYK color profile used for conversion.</param>
+            <param name="grayscale">The grayscale color profile used for conversion.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ConvertToWebColor(System.Drawing.Color)" draft="yes">
+            <summary>Converts the <see cref="T:System.Drawing.Color" /> class instance to its hex representation of the RGB triad in HTML-style syntax.</summary>
+            <param name="color">The color to convert.</param>
+            <returns><para>The <see cref="T:System.String" /> which contains a hex representation of the RGB triad in HTML-style syntax equivalent to the <paramref name="color" /> value.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.GetCmykColorProfile">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.GetGrayscaleColorProfile">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.GetImageSize(System.String,System.Drawing.Size@,System.Single@,System.Single@)" draft="yes">
+            <summary>Returns the size and resolution of an image stored at the specified path.</summary>
+            <param name="imageFileName">Filename of the image to get a size.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.GetNumberFormat" draft="yes">
+            <summary>Returns a number format.</summary>
+            <returns><para>The <see cref="T:System.Globalization.NumberFormatInfo" /> value which defines how numeric values are formatted and displayed.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.GetRgbColorProfile">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.LoadBitmap(System.String)" draft="yes">
+            <summary>Loads bitmap from the specified path.</summary>
+            <param name="fileName">File name to load a bitmap from.</param>
+            <returns><para>The result <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.ParseWebColor(System.String)" draft="yes">
+            <summary>Parses a string which contains a hex representation of the RGB triad in HTML-style syntax to the <see cref="T:System.Drawing.Color" /> value.</summary>
+            <param name="c">String to parse.</param>
+            <returns><para>The <see cref="T:System.Drawing.Color" /> value equivalent to the specified string.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Common.SaveBitmap(Aurigma.GraphicsMill.Bitmap,System.String)" draft="yes">
+            <summary>Saves bitmap to the specified path.</summary>
+            <param name="bitmap">The btmap to save.</param>
+            <param name="fileName">The destination file name.</param>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject">
+            <summary>This class represents a vector ellipse.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject.#ctor(System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject" /> class with the specified settings.</summary>
+            <param name="left">The x-coordinate of the upper-left corner of the rectangle in which the ellipse will be inscribed.</param>
+            <param name="top">The y-coordinate of the upper-left corner of the rectangle in which the ellipse will be inscribed.</param>
+            <param name="width">The width of the rectangle in which the ellipse will be inscribed.</param>
+            <param name="height">The height of the rectangle in which the ellipse will be inscribed.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject.#ctor(System.Drawing.RectangleF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.EllipseVObject" /> class using the specified <see cref="T:System.Drawing.RectangleF" /> to inscribe this ellipse.</summary>
+            <param name="rectangle">The <see cref="T:System.Drawing.RectangleF" /> structure that represents the rectangle in which the ellipse will be inscribed.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.GridVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject">
+            <summary>This class represents a bitmap v-object.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.Bitmap" draft="yes">
+            <summary>Gets or sets a bitmap to display within this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.Bitmap" /> value which specifies a bitmap to display.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> on.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.IsLocalImage" draft="yes">
+            <summary>Get a value indicating whether the image is stored locally in the private cache.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the image is stored locally in the private cache.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.LoadImage(System.IO.FileInfo,System.Boolean)" draft="yes">
+            <summary>Loads the bitmap from the external source.</summary>
+            <param name="imageFile"><see cref="T:System.IO.FileInfo" /> to load a bitmap.</param>
+            <param name="actualSize">Value specifying whether a size of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> should be same as a size of loaded image.</param>
+            <overloads><summary>Loads the bitmap from the external source.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.LoadImage(System.IO.FileInfo,System.Boolean,System.Boolean)" draft="yes">
+            <summary>Loads the bitmap from the external source.</summary>
+            <param name="imageFile"><see cref="T:System.IO.FileInfo" /> to load a bitmap.</param>
+            <param name="actualSize">Value specifying whether a size of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> should be same as a size of loaded image.</param>
+            <param name="preserveAspectRatio">Value specifying whether to decrease width or height of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> to save aspect ratio of loaded image.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.LoadImageFromRemoteUrl(System.Uri,System.Boolean,System.Boolean,System.Boolean)" draft="yes">
+            <summary>Loads the bitmap from the external source.</summary>
+            <param name="imageUri"><see cref="T:System.Uri" /> to load a bitmap.</param>
+            <param name="actualSize">Value specifying whether a size of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> should be same as a size of loaded image.</param>
+            <param name="preserveAspectRatio">Value specifying whether to decrease width or height of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> to save aspect ratio of loaded image.</param>
+            <param name="downloadToCache">Value specifying if the bitmap should be loaded to the private cache.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.MaxSize">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap">The bitmap to create this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(Aurigma.GraphicsMill.Bitmap,System.Boolean)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified settings.</summary>
+            <param name="bitmap">The bitmap to create this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.Boolean)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified settings.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.IO.FileInfo)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified <see cref="T:System.IO.FileInfo" />.</summary>
+            <param name="imageFile"><see cref="T:System.IO.FileInfo" /> to load a bitmap.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.IO.FileInfo,System.Boolean,System.Boolean)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified settings.</summary>
+            <param name="imageFile"><see cref="T:System.IO.FileInfo" /> to load a bitmap.</param>
+            <param name="scaleToActualSize">Value specifying whether to take into account image resolution (DPI) when calculating the aspect ratio. You can change this value later through property <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.ScaleToActualSize" />.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.Uri)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified <see cref="T:System.Uri" />.</summary>
+            <param name="imageUri"><see cref="T:System.Uri" /> to load a bitmap.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.Uri,System.Boolean)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified settings.</summary>
+            <param name="imageUri"><see cref="T:System.Uri" /> to load a bitmap.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.#ctor(System.Uri,System.Boolean,System.Boolean)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class using the specified settings.</summary>
+            <param name="imageUri"><see cref="T:System.Uri" /> to load a bitmap.</param>
+            <param name="downloadToCache">Value specifying if the bitmap should be loaded to the private cache.</param>
+            <param name="scaleToActualSize">Value specifying whether to take into account image resolution (DPI) when calculating the aspect ratio. You can change this value later through property <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.ScaleToActualSize" />.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.PrivateCacheFullFileName" draft="yes">
+            <summary>Gets an absolute path of the image stored in the private cache.</summary>
+            <value><para>The <see cref="T:System.String" /> value specifying an absolute path of the image stored in the private cache. Returns <strong>null</strong> if the image is not stored locally.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.RemoteUrl" draft="yes">
+            <summary>Gets a URL to the remote image.</summary>
+            <value><para>The <see cref="T:System.String" /> value specifying a URL to the remote image. Returns <strong>null</strong> if the image is stored locally.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.ScaleToActualSize" draft="yes">
+            <summary>Get or sets a value that specifies whether to take into account image resolution (DPI) when calculating the aspect ratio.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to take into account image resolution (DPI) when calculating the aspect ratio.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject.Update(System.Object[])" draft="yes">
+            <summary>Updates this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</summary>
+            <param name="args">Update parameters.</param>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData" draft="yes">
+            <summary>This class represents a state of an image vector object and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.HR" draft="yes">
+            <summary>Gets or sets a horizontal resolution of the image stored in the private cache.</summary>
+            <value><para>Horizontal resolution of the image stored in the private cache.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObject" />.</summary>
+            <param name="obj">Image v-object to create v-object data from.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.PubIH" draft="yes">
+            <summary>Gets or sets a height of the image stored in the public cache.</summary>
+            <value><para>Height of the image stored in the public cache.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.PubIW" draft="yes">
+            <summary>Gets or sets a width of the image stored in the public cache.</summary>
+            <value><para>Width of the image stored in the public cache.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.PvtFN" draft="yes">
+            <summary>Gets an absolute path of the image stored in the private cache.</summary>
+            <value><para>The <see cref="T:System.String" /> value specifying an absolute path of the image stored in the private cache.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.PvtIH" draft="yes">
+            <summary>Gets or sets a height of the image stored in the private cache.</summary>
+            <value><para>Height of the image stored in the private cache.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.PvtIW" draft="yes">
+            <summary>Gets or sets a width of the image stored in the private cache.</summary>
+            <value><para>Width of the image stored in the private cache.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.S" draft="yes">
+            <summary>Gets or set an image source.</summary>
+            <value><para>The <see cref="T:System.String" /> which contains an image source.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.SAS" draft="yes">
+            <summary>Get or sets a value that specifies whether to take into account image resolution (DPI) when calculating the aspect ratio.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to take into account image resolution (DPI) when calculating the aspect ratio.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ImageVObjectData.VR" draft="yes">
+            <summary>Gets or sets a vertical resolution of the image stored in the private cache.</summary>
+            <value><para>Vertical resolution of the image stored in the private cache.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" draft="yes">
+            <summary>This class represents a layer.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Canvas" draft="yes">
+            <summary>Gets a reference to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> object this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> belongs to.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> belongs to.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Index" draft="yes">
+            <summary>Get the index of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection" />. Return <c>-1</c> if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> was not added to the collection.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents an index of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Locked" draft="yes">
+            <summary>Gets or sets the value indicating if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> is locked.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> is locked.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Name" draft="yes">
+            <summary>Gets or sets the name of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents the name of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> class.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Region" draft="yes">
+            <summary>Gets or sets the rectangle region on the layer surface in which v-objects can be placed.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> in which v-objects can be placed.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.UniqueId" draft="yes">
+            <summary>Gets or sets a unique identifier of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a unique identifier of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.Visible" draft="yes">
+            <summary>Gets or sets the value indicating if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> is visible.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> is visible.</para><para>Default value is <strong>true</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer.VObjects" draft="yes">
+            <summary>Gets a collection of vector objects associated with this layer.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection" /> which represents a collection of vector objects associated with this layer.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection">
+            <summary>This class represents a collection of layers.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection.Canvas" draft="yes">
+            <summary>Gets a reference to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> object this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection" /> belongs to.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection" /> belongs to.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection.GetLayersByName(System.String)" draft="yes">
+            <summary>Search layers with the specified name.</summary>
+            <param name="name">The name to search layers.</param>
+            <returns><para>An array of layers contained in this collection and match the specified name.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerCollection.GetVObjectsByName(System.String)" draft="yes">
+            <summary>Search v-objects with the specified name.</summary>
+            <param name="name">The name to search v-objects.</param>
+            <returns><para>An array of v-objects which match the specified name.</para></returns>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData">
+            <summary>This class represents a state of a layer and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</summary>
+            <param name="l">Layer to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.ID" draft="yes">
+            <summary>Gets or sets a unique identifier of the layer.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a unique identifier of the layer.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.L" draft="yes">
+            <summary>Gets or sets the value indicating if the layer is locked.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the layer is locked.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.N" draft="yes">
+            <summary>Gets or sets the name of the layer.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents the name of the layer.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" />.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.R" draft="yes">
+            <summary>Gets or sets the rectangle region on the layer surface in which v-objects can be placed.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> in which v-objects can be placed.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.V" draft="yes">
+            <summary>Gets or sets the value indicating if the layer is visible.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the layer is visible.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerData.VO" draft="yes">
+            <summary>Gets a list of vector objects associated with this layer.</summary>
+            <value><para>The list of vector objects associated with this layer.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerTypeData">
+            <summary>Represents a pair of layer type and its data.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerTypeData.D" draft="yes">
+            <summary>Represents a layer data.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerTypeData.#ctor(System.String,Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerTypeData" /> class using the specified settings.</summary>
+            <param name="type">Layer type.</param>
+            <param name="data">Layer data.</param>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LayerTypeData.T" draft="yes">
+            <summary>Represents a layer type.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject">
+            <summary>This class represents a vector line.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Color" draft="yes">
+            <summary>Gets or sets a color of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this<see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> on.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> class using the specified points.</summary>
+            <param name="p1">The start point.</param>
+            <param name="p2">The end point.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.#ctor(System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> class using the specified points.</summary>
+            <param name="x1">The x-coordinate of the start point.</param>
+            <param name="y1">The y-coordinate of the start point.</param>
+            <param name="x2">The x-coordinate of the end point.</param>
+            <param name="y2">The y-coordinate of the end point.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Point0" draft="yes">
+            <summary>Gets or sets the start point of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents the start point.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Point1" draft="yes">
+            <summary>Gets or sets the end point of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents the end point.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject.Width" draft="yes">
+            <summary>Get or sets width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> (in points).</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.LineVObject" /> (in points).</para><para>Default value is <strong>4</strong>.</para></value>
+        </member>
+        <member name="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math" draft="yes">
+            <summary>The <see cref="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math" /> namespace contains classes intended to work with geometrical obejcts, such as point and rectangle.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF">
+            <summary>This class represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane and exposes a number of methods  to operate with it.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.AreEqualValue(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Determines whether the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> instance is equal to this point.</summary>
+            <param name="p">The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> to compare.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> value which indicates whether <paramref name="p" /> is the same instance as this point.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.AreEqualValues(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Determines whether the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> instances are equal.</summary>
+            <param name="p1">The first <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> to compare.</param>
+            <param name="p2">The second <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> to compare.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> value which indicates whether <paramref name="p1" /> and <paramref name="p2" /> are the same instances.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.Distance(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Returns a distance from this point to the specified one.</summary>
+            <param name="point">The destination point.</param>
+            <returns><para>The <see cref="T:System.Double" /> value which represents a distance between this point and <paramref name="point" />.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> class using the specified point.</summary>
+            <param name="pt">The point to create the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.#ctor(System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> class using the specified coordinates.</summary>
+            <param name="x">The x-coordinate of the point to create.</param>
+            <param name="y">The y-coordinate of the point to create.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.Rotate(System.Single)" draft="yes">
+            <summary>Rotates a point to the specified angle.</summary>
+            <param name="angle">The angle to rorate point to.</param>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents a rotated point.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.Scale(System.Single,System.Single)" draft="yes">
+            <summary>Scales a point to the specified values.</summary>
+            <param name="scaleX">The scale factor in the x-direction.</param>
+            <param name="scaleY">The scale factor in the y-direction.</param>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents a scaled point.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.ToPoint" draft="yes">
+            <summary>Converts this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> to the <see cref="T:System.Drawing.Point" />.</summary>
+            <returns><para>The <see cref="T:System.Drawing.Point" /> value equivalent to this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.ToString" draft="yes">
+            <summary>Returns a string that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</summary>
+            <returns>A <see cref="T:System.String" /> that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.Translate(System.Single,System.Single)" draft="yes">
+            <summary>Translates a point to the specified offset.</summary>
+            <param name="x">The offset in the x-direction.</param>
+            <param name="y">The offset in the y-direction.</param>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents a translated point.</para></returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.X" draft="yes">
+            <summary>Gets or sets the x-coordinate of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</summary>
+            <value><para>The x-coordinate of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF.Y" draft="yes">
+            <summary>Gets or sets the y-coordinate of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</summary>
+            <value><para>The y-coordinate of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" />.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF">
+            <summary>This class represents a set of floating-point numbers that represent the location, size, rotation angle and center of a rectangle and exposes a number of methods to operate with it.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.Angle" draft="yes">
+            <summary>Gets or sets an angle (in degrees) to rotate this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> on.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a rotation angle.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.AreEqual(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF)" draft="yes">
+            <summary>Determines whether the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> instances are equal.</summary>
+            <param name="rect1">The first <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> to compare.</param>
+            <param name="rect2">The second <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> to compare.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> which indicates whether <paramref name="rect1" /> and <paramref name="rect2" /> are the same instances.</para></returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.Bounds" draft="yes">
+            <summary>Gets the bounds of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> taking into account its roration.</summary>
+            <value><para>The <see cref="T:System.Drawing.RectangleF" /> value which represents a rectangle circumscribed about this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.CenterX" draft="yes">
+            <summary>Gets or sets the x-coordinate of the rotation center of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <value><para>The x-coordinate of the rotation center of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.CenterY" draft="yes">
+            <summary>Gets or sets the y-coordinate of the rotation center of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <value><para>The y-coordinate of the rotation center of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.Height" draft="yes">
+            <summary>Gets or sets a height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.Location" draft="yes">
+            <summary>Gets or sets the coordinates of the upper-left corner of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents the upper-left corner of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" /> class using the specified settings.</summary>
+            <param name="centerX">The x-coordinate of the rotation center of the rectangle to create.</param>
+            <param name="centerY">The y-coordinate of the rotation center of the rectangle to create.</param>
+            <param name="width">The width of the rectangle to create.</param>
+            <param name="height">The height of the rectangle to create.</param>
+            <param name="angle">The rotation angle of the rectangle to create.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.ToString" draft="yes">
+            <summary>Returns a string that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <returns>A <see cref="T:System.String" /> that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF.Width" draft="yes">
+            <summary>Gets or sets a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.RotatedRectangleF" />.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject">
+            <summary>This class represents a vector polyline.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.AddPoint(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF)" draft="yes">
+            <summary>Adds the specified point to the end of the points collection.</summary>
+            <param name="point"><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> to add.</para></param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.Color" draft="yes">
+            <summary>Gets or sets a color of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" />.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> on.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.GetPoint(System.Int32)" draft="yes">
+            <summary>Returns a point with the specified index.</summary>
+            <param name="index"><para>The index of the point.</para></param>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> that matches the specified index.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.GetPoints" draft="yes">
+            <summary>Returns a collection of points this polyline is constructed from.</summary>
+            <returns><para>The <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection of points which are nodes of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" />.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.InsertPoint(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,System.Int32)" draft="yes">
+            <summary>Inserts the point into the specified position.</summary>
+            <param name="point">The point to insert.</param>
+            <param name="index">The position to insert.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF[])" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> class using the specified collection of points.</summary>
+            <param name="points">An array of the nodes that make up the polyline.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.PointsCount" draft="yes">
+            <summary>Gets the number of points this polyline is constructed from.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents a number of points this polyline is constructed from.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.RemovePoint(System.Int32)" draft="yes">
+            <summary>Removes point with the specified index.</summary>
+            <param name="index">The index of the point to remove.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.SetPoint(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,System.Int32)" draft="yes">
+            <summary>Sets a point to the specified position.</summary>
+            <param name="point">The point to set.</param>
+            <param name="index">The position to set point to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject.Width" draft="yes">
+            <summary>Get or sets width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> (in points).</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PolylineVObject" /> (in points).</para><para>Default value is <strong>10</strong>.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" draft="yes">
+            <summary>This class represents an extended text vector object which supports storing original font settings.</summary>
+            <remarks><para>You can use this class if you need to create a text vector object based on a text label stored in a PSD file.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.CustomFont" draft="yes">
+            <summary>Gets or sets the value indicating whether to use a custom font (specified through <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.FontName" />, <see cref="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.FontSize" />, etc properties) or an original one when rendering.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to use a custom font when rendering.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.#ctor(System.String,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,System.String,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> class using the specified settings.</summary>
+            <param name="text">A text string to display.</param>
+            <param name="location">A location of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</param>
+            <param name="fontName">A font to render the text string.</param>
+            <param name="fontSize">A size of the font.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalAlignment" draft="yes">
+            <summary>Gets or sets the value that specifies an origianl text alignment.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment" /> enumeration member that specifies an original text alignment.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalBold" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is bold.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is bold.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalFontName" draft="yes">
+            <summary>Gets or sets original typeface name of the font used to display a text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents an original font name.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalFontSize" draft="yes">
+            <summary>Gets or sets an origianl size of the font used to display text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents an original font size.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalItalic" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is italic.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is italic.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalUnderline" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is underlined.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> is underlined.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject.OriginalWeight" draft="yes">
+            <summary>Gets or sets an origianl weight of the font used to display text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents an original font weight.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData" draft="yes">
+            <summary>This class represents a state of an extended text vector object and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.CF" draft="yes">
+            <summary>Gets or sets the value indicating whether to use a custom font or an original one when rendering.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether to use a custom font when rendering.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObject" />.</summary>
+            <param name="obj">Text v-object to create v-object data from.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OA" draft="yes">
+            <summary>Gets or sets the value that specifies an origianl text alignment.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment" /> enumeration member that specifies an original text alignment.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OB" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of the extended text v-object is bold.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of the extended text v-object is bold.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OFN" draft="yes">
+            <summary>Gets or sets original typeface name of the font used to display a text in the extended text v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents an original font name.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OFS" draft="yes">
+            <summary>Gets or sets an origianl size of the font used to display text in the extended text v-object.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents an original font size.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OI" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of the extended text v-object is italic.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of the extended text v-object is italic.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OU" draft="yes">
+            <summary>Get or sets the value indicating whether an original text of the extended text v-object is underlined.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether an original text of the extended text v-object is underlined.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.PsdTextVObjectData.OW" draft="yes">
+            <summary>Gets or sets an origianl weight of the font used to display text in the extended text v-object.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents an original font weight.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion">
+            <summary>This class represents a rectangle region on the layer surface in which v-objects can be placed.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.AreEqualValue(Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion)" draft="yes">
+            <summary>Determines whether the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> instance is equal to this rectangle region.</summary>
+            <param name="region">The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> to compare.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> which indicates whether <paramref name="region" /> is the same instance as this rectangle region.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Contains(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Determines if the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is entirely contained within this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <param name="vo">The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> to test.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> which indicates whether <paramref name="vo" /> is entirely contained within this rectangle region.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Contains(System.Drawing.RectangleF)" draft="yes">
+            <summary>Determines if the specified <see cref="T:System.Drawing.RectangleF" /> is entirely contained within this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <param name="rect">The <see cref="T:System.Drawing.RectangleF" /> to test.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> which indicates whether <paramref name="rect" /> is entirely contained within this rectangle region.</para></returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Height" draft="yes">
+            <summary>Gets or sets a height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Left" draft="yes">
+            <summary>Gets or sets a x-coordinate of the left edge of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a x-coordinate of the left edge of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.#ctor(System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class with the specified settings.</summary>
+            <param name="left">The x-coordinate of the upper-left corner of the rectangle region to create.</param>
+            <param name="top">The y-coordinate of the upper-left corner of the rectangle region to create.</param>
+            <param name="width">The width of the rectangle region to create.</param>
+            <param name="height">The height of the rectangle region to create.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.#ctor(System.Drawing.RectangleF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" /> class with the specified <see cref="T:System.Drawing.RectangleF" />.</summary>
+            <param name="rectangle">The <see cref="T:System.Drawing.RectangleF" /> structure that represents the rectangle region to create.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Top" draft="yes">
+            <summary>Gets or sets a y-coordinate of the left edge of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a y-coordinate of the left edge of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion.Width" draft="yes">
+            <summary>Gets or sets a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleRegion" />.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject">
+            <summary>This class represents a vector rectangle.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.BorderColor" draft="yes">
+            <summary>Gets or sets a color of the border around this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color of the border around this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para><para>Default value is black.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.BorderWidth" draft="yes">
+            <summary>Gets or sets a width of the border around this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which specifies a a width of the border around this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para><para>Default value is <strong>1</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> on.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.FillColor" draft="yes">
+            <summary>Gets or sets a color used to fill this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents a color used to fill this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para><para>Default value is <strong>#707070</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.GetOriginalPath">
+            <exclude />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.Height" draft="yes">
+            <summary>Gets or sets the height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a height of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.Location" draft="yes">
+            <summary>Gets or sets the coordinates of the upper-left corner of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF" /> value which represents the upper-left corner of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.#ctor(System.Single,System.Single,System.Single,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class with the specified settings.</summary>
+            <param name="left">The x-coordinate of the upper-left corner of the rectangle to create.</param>
+            <param name="top">The y-coordinate of the upper-left corner of the rectangle to create.</param>
+            <param name="width">The width of the rectangle to create.</param>
+            <param name="height">The height of the rectangle to create.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.#ctor(System.Drawing.RectangleF)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class with the specified <see cref="T:System.Drawing.RectangleF" />.</summary>
+            <param name="rectangle">The <see cref="T:System.Drawing.RectangleF" /> structure that represents the rectangle to create.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject.Width" draft="yes">
+            <summary>Gets or sets the width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents a width of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData" draft="yes">
+            <summary>This class represents a state of a rectangle vector object and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.BC" draft="yes">
+            <summary>Gets or sets a color of the border around the rectangle v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a color of the border around the rectangle v-object.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.BW" draft="yes">
+            <summary>Gets or sets a width of the border around the rectangle v-object.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which specifies a a width of the border around the rectangle v-object.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.FC" draft="yes">
+            <summary>Gets or sets a color used to fill the rectangle v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a color used to fill the rectangle v-object.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObjectData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RectangleVObject" />.</summary>
+            <param name="obj">Rectangle v-object to create v-object data from.</param>
+        </member>
+        <member name="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo" draft="yes">
+            <summary>The <see cref="N:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo" /> namespace contains classes intended to operate with history.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.Command">
+            <summary>This is a base class for all client-side commands.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.Command.Execute(Aurigma.GraphicsMill.AjaxControls.VectorObjects.ICanvas)" draft="yes">
+            <summary>Executes a command.</summary>
+            <param name="canvas">The canvas to execute the command on.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.Command.#ctor">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.Command.UnExecute(Aurigma.GraphicsMill.AjaxControls.VectorObjects.ICanvas)" draft="yes">
+            <summary>Rolls the command back.</summary>
+            <param name="canvas">The canvas to roll the command back.</param>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" draft="yes">
+            <summary>This class represents a history of modifications applied to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> content.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.AddLayerAdded(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer,System.Int32)" draft="yes">
+            <summary>Adds the layer added command to the history.</summary>
+            <param name="layer">The layer which was added.</param>
+            <param name="index">An index of this layer.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.AddLayerRemoved(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer,System.Int32)" draft="yes">
+            <summary>Adds the layer removed command to the history.</summary>
+            <param name="layer">The layer which was removed.</param>
+            <param name="index">An index of this layer.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.AddVObjectAdded(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject,System.Int32,System.Int32)" draft="yes">
+            <summary>Adds the v-object added command to the history.</summary>
+            <param name="vObject">The v-object that was added.</param>
+            <param name="vObjectIndex">An index of this v-object.</param>
+            <param name="layerIndex">An index of the layer this v-object belongs to.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.AddVObjectChanged(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject,System.Int32,System.Int32)" draft="yes">
+            <summary>Adds the v-object changed command to the history.</summary>
+            <param name="vObject">The v-object that was changed.</param>
+            <param name="vObjectIndex">An index of this v-object.</param>
+            <param name="layerIndex">An index of the layer this v-object belongs to.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.AddVObjectRemoved(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject,System.Int32,System.Int32)" draft="yes">
+            <summary>Adds the v-object removed command to the history.</summary>
+            <param name="vObject">The v-object that was removed.</param>
+            <param name="vObjectIndex">An index of this v-object.</param>
+            <param name="layerIndex">An index of the layer this v-object belongs to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.CanRedo" draft="yes">
+            <summary>Gets the value indicating if the last action can be redone.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which indicates whether the last action can be redone.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.CanUndo" draft="yes">
+            <summary>Gets the value indicating if the last action can be undone.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which indicates whether the last action can be undone.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.Clear" draft="yes">
+            <summary>Discards both the undo and redo histories.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.ClearRedo" draft="yes">
+            <summary>Discards the redo history.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.ClearUndo" draft="yes">
+            <summary>Discards the undo history.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.Enable" draft="yes">
+            <summary>Gets or sets the value indicating if the undo/redo functionality is enabled.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value specifying whether the undo/redo functionality should be enabled or not.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.MaxUndoStepCount" draft="yes">
+            <summary>Gets or sets a maximum number of available undo steps.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which specifies a a maximum number of available undo steps.</para><para>Default value is <strong>10</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.ICanvas)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" /> class connected with the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.ICanvas" />.</summary>
+            <param name="cv">The canvas to create the history for.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.Redo" draft="yes">
+            <summary>Redoes the last made change.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.TrackingEnabled" draft="yes">
+            <summary>Gets or sets the value indicating if the tracking commands functionality is enabled.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value specifying whether the tracking commands functionality should be enabled or not.</para><para>Default value is <strong>true</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History.Undo" draft="yes">
+            <summary>Undoes the last made change.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData" draft="yes">
+            <summary>This class represents a state of a history and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" /> class instance.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" />.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.C" draft="yes">
+            <summary>Gets or sets a list of the commands.</summary>
+            <value>The list of commands.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.Cur" draft="yes">
+            <summary>Gets or sets an index of the current action.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which specifiesan index of the current action</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.E" draft="yes">
+            <summary>Gets or sets the value indicating if the undo/redo functionality is enabled.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value specifying whether the undo/redo functionality should be enabled or not.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.L" draft="yes">
+            <summary>Gets or sets the value indicating if some command is executing.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value specifying whether some command is executing.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.History" />.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.T" draft="yes">
+            <summary>Gets or sets the value indicating if the tracking commands functionality is enabled.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value specifying whether the tracking commands functionality should be enabled or not.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryData.US" draft="yes">
+            <summary>Gets or sets a maximum number of available undo steps.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which specifies a maximum number of available undo steps.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData">
+            <summary>Represents a pair of command type and its data.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData.D" draft="yes">
+            <summary>Represents a command data.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData.#ctor(System.String,System.String)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData" /> class using the specified settings.</summary>
+            <param name="type">Command type.</param>
+            <param name="data">Command data.</param>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.RedoUndo.HistoryTypeData.T" draft="yes">
+            <summary>Represents a command type.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment">
+            <summary>Contains text alignment types.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment.Center" draft="yes">
+            <summary>Align text along the center.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment.Left" draft="yes">
+            <summary>Align text along the left edge.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment.Right" draft="yes">
+            <summary>Align text along the right edge.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject">
+            <summary>This class represents a vector text block.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Alignment" draft="yes">
+            <summary>Gets or sets the value that specifies text alignment.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment" /> enumeration member that specifies text alignment.</para><para>Default value is <see cref="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment.Left" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Bold" draft="yes">
+            <summary>Get or sets the value indicating whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is bold.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is bold.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> on.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.FontName" draft="yes">
+            <summary>Gets or sets typeface name of the font used to display a text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents font name.</para><para>Default value is <strong>"Arial"</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.FontSize" draft="yes">
+            <summary>Gets or sets the size of the font used to display text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents font size.</para><para>Default value is <strong>20</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Italic" draft="yes">
+            <summary>Get or sets the value indicating whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is italic.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is italic.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.#ctor(System.String,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Math.PointF,System.String,System.Single)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> class using the specified settings.</summary>
+            <param name="text">A text string to display.</param>
+            <param name="location">A location of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</param>
+            <param name="fontName">A font to render the text string.</param>
+            <param name="fontSize">A size of the font.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.SupportedActions" draft="yes">
+            <summary>Gets or sets the enumeration of actions which can be applied to this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction" /> enumeration which lists available actions.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Text" draft="yes">
+            <summary>Gets or sets a text string to display within this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which specifies a text to display.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.TextColor" draft="yes">
+            <summary>Gets or sets color of the font used to display a text in this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <value><para>The <see cref="T:System.Drawing.Color" /> value which represents font color.</para><para>Default value is black.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject.Underline" draft="yes">
+            <summary>Get or sets the value indicating whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is underlined.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> is underlined.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData" draft="yes">
+            <summary>This class represents a state of a text vector object and allows applying this state to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" /> class instance.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.A" draft="yes">
+            <summary>Gets or sets the value that specifies text alignment.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextAlignment" /> enumeration member that specifies text alignment.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.B" draft="yes">
+            <summary>Get or sets the value indicating whether the text of the text v-object is bold.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of the text v-object is bold.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.FN" draft="yes">
+            <summary>Gets or sets typeface name of the font used to display a text in the text v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents font name.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.FS" draft="yes">
+            <summary>Gets or sets the size of the font used to display text in the text v-object.</summary>
+            <value><para>The <see cref="T:System.Single" /> value which represents font size.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.I" draft="yes">
+            <summary>Get or sets the value indicating whether the text of the text v-object is italic.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of the text v-object is italic.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObject" />.</summary>
+            <param name="obj">Text v-object to create v-object data from.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.TC" draft="yes">
+            <summary>Gets or sets color of the font used to display a text in the text v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents font color.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.Txt" draft="yes">
+            <summary>Gets or sets a text string to display within the text v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which specifies a text to display.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.TextVObjectData.U" draft="yes">
+            <summary>Get or sets the value indicating whether the text of the text v-object is underlined.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the text of the text v-object is underlined.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform">
+            <summary>Exposes properties which configure v-object transformation.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.Angle" draft="yes">
+            <summary>Gets or sets a rotation angle (in degrees).</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a rotation angle.</para><para>Default value is <strong>0</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.AreEqualValues(Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform,Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform)" draft="yes">
+            <summary>Determines whether the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> instances are equal.</summary>
+            <param name="transform1">The first <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> to compare.</param>
+            <param name="transform2">The second <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> to compare.</param>
+            <returns><para>The <see cref="T:System.Boolean" /> which indicates whether <paramref name="transform1" /> is the same instance as <paramref name="transform2" />.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.Clone" draft="yes">
+            <summary>Creates a full copy of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" />.</summary>
+            <returns><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> which contains a full copy of the current transform.</para></returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> class using the specified settings.</summary>
+            <param name="scaleX">Scale factor in the x-direction.</param>
+            <param name="scaleY">Scale factor in the y-direction.</param>
+            <param name="translateX">Distance to translate along the x-axis.</param>
+            <param name="translateY">Distance to translate along the y-axis.</param>
+            <param name="angle">Rotation angle.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.ScaleX" draft="yes">
+            <summary>Gets or sets a scale factor in the x-direction.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a scale factor in the x-direction.</para><para>Default value is <strong>1</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.ScaleY" draft="yes">
+            <summary>Gets or sets a scale factor in the y-direction.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a scale factor in the y-direction.</para><para>Default value is <strong>1</strong>.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.ToString" draft="yes">
+            <summary>Returns a string that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" />.</summary>
+            <returns>A <see cref="T:System.String" /> that represents this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" />.</returns>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.TransformChanged" draft="yes">
+            <summary>Raised when the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> is modified.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.TranslateX" draft="yes">
+            <summary>Gets or sets a distance to translate along the x-axis.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a distance to translate along the x-axis.</para><para>Default value is <strong>0</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform.TranslateY" draft="yes">
+            <summary>Gets or sets a distance to translate along the y-axis.</summary>
+            <value><para>The <see cref="T:System.Double" /> value which represents a distance to translate along the y-axis.</para><para>Default value is <strong>0</strong>.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject">
+            <summary>This is a base class for all the AJAX vector objects.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.BeginUpdate" draft="yes">
+            <summary>Starts updating of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Bounds" draft="yes">
+            <summary>Gets the size and location (in points) of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> relatively to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> it belongs to.</summary>
+            <value><para>The <see cref="T:System.Drawing.RectangleF" /> in points relative to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> that represents the size and location of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Canvas" draft="yes">
+            <summary>Gets a reference to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> object this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> belongs to.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> belongs to.</para></value>
+        </member>
+        <member name="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Changed" draft="yes">
+            <summary>Raised when the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is modified (after the modification is completed).</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Data" draft="yes">
+            <summary>Gets or sets serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents serialized data of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Draw(Aurigma.GraphicsMill.Bitmap)" draft="yes">
+            <summary>Draws <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> on the specified <see cref="T:Aurigma.GraphicsMill.Bitmap" />.</summary>
+            <param name="bitmap"><see cref="T:Aurigma.GraphicsMill.Bitmap" /> to draw <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> on.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.EndUpdate" draft="yes">
+            <summary>Finishes updating of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Index" draft="yes">
+            <summary>Get the index of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> in the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection" />. Returns <c>-1</c> if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> was not added to the collection.</summary>
+            <value><para>The <see cref="T:System.Int32" /> value which represents an index of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.IsUpdating" draft="yes">
+            <summary>Gets or sets a value indicating whether <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is updating.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is updating.</para><para>Default value is <strong>false</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Layer" draft="yes">
+            <summary>Gets a reference to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> object this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> belongs to.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> belongs to.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Locked" draft="yes">
+            <summary>Gets or sets the value indicating if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is locked.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is locked.</para><para>Default value is <strong>false</strong>.</para></value>
+            <remarks><para>If <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is locked, it cannot be moved, resized, or rotated by the user.</para></remarks>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Mode" draft="yes">
+            <summary>Gets or sets the state of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <value>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode" /> enumeration member that specifies the state of the object.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Name" draft="yes">
+            <summary>Gets or sets the name of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents the name of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> class.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.OnChanged" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Changed" /> event.</summary>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.SupportedActions" draft="yes">
+            <summary>Gets or sets the enumeration of actions which can be applied to this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction" /> enumaration which lists available actions.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Tag" draft="yes">
+            <summary>Gets or sets custom data.</summary>
+            <value><para>The <see cref="T:System.Object" /> value which represents a piece of custom data.</para><para>Default value is <strong>null</strong>.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Transform" draft="yes">
+            <summary>Gets or sets value which configures v-object transformation.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> class instance which provides an access to properties which configure v-object transformation.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.UniqueId" draft="yes">
+            <summary>Gets or sets a unique identifier of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a unique identifier of this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Update(System.Object[])" draft="yes">
+            <summary>Updates this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="args">Update parameters.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject.Visible" draft="yes">
+            <summary>Gets or sets the value indicating if the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is visible.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is visible.</para><para>Default value is <strong>true</strong>.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction">
+            <summary>Contains v-object actions.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.All" draft="yes">
+            <summary>Enables all the actions.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.ArbitraryResize" draft="yes">
+            <summary>The arbitrary resize action. If this action in supported by the object, the user will be able to resize it without preserving the aspect ratio.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.Drag" draft="yes">
+            <summary>The drag action. If this action in supported by the object, the user will be able to move it.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.None" draft="yes">
+            <summary>Disables all the actions.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.ProportionalResize" draft="yes">
+            <summary>The proportional resize action. If this action in supported by the object, the user will be able to resize it preserving the aspect ratio.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.Resize" draft="yes">
+            <summary>The resize action. If this action in supported by the object, the user will be able to resize it.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction.Rotate" draft="yes">
+            <summary>The rotate action. If this action in supported by the object, the user will be able to rotate it.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection">
+            <summary>This class represents a collection of v-objects.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection.GetVObjectsByName(System.String)" draft="yes">
+            <summary>Search v-objects with the specified name.</summary>
+            <param name="name">The name to search v-objects.</param>
+            <returns><para>An array of v-objects which match the specified name.</para></returns>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection.Layer" draft="yes">
+            <summary>Gets a reference to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> object this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection" /> belongs to.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Layer" /> this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectCollection" /> belongs to.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData" draft="yes">
+            <summary>This is a base class for all the classes which represent a state of a vector object.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.ApplyState(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Applies the stored state to the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to apply the state to.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.ID" draft="yes">
+            <summary>Gets or sets a unique identifier of the v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents a unique identifier of the v-object.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.L" draft="yes">
+            <summary>Gets or sets the value indicating if the v-object is locked.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the v-object is locked.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.M" draft="yes">
+            <summary>Gets or sets the state of the v-object.</summary>
+            <value>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode" /> enumeration member that specifies the state of the object.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.N" draft="yes">
+            <summary>Gets or sets the name of the v-object.</summary>
+            <value><para>The <see cref="T:System.String" /> value which represents the name of the v-object.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData" /> class.</summary>
+            <overloads><summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData" /> class.</summary></overloads>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.#ctor(Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject)" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData" /> class from the specified <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+            <param name="obj">V-object to create v-object data from.</param>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.P" draft="yes">
+            <summary>Gets or sets an array of control points associated with the v-object.</summary>
+            <value><para>An array of control points.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.SA" draft="yes">
+            <summary>Gets or sets the enumeration of actions which can be applied to the v-object.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectAction" /> enumaration which lists available actions.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.T" draft="yes">
+            <summary>Gets or sets value which configures v-object transformation.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Transform" /> class instance which provides an access to properties which configure v-object transformation.</para></value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.Tg" draft="yes">
+            <summary>Gets or sets custom data.</summary>
+            <value><para>The <see cref="T:System.Object" /> value which represents a piece of custom data.</para>.</value>
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectData.V" draft="yes">
+            <summary>Gets or sets the value indicating if the v-object is visible.</summary>
+            <value><para>The <see cref="T:System.Boolean" /> value which specifies whether the v-object is visible.</para></value>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode" draft="yes">
+            <summary>Contains available states of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" />.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode.Created" draft="yes">
+            <summary><see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is created.</summary>
+        </member>
+        <member name="F:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObjectMode.Creating" draft="yes">
+            <summary><see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.VObject" /> is creating.</summary>
+        </member>
+        <member name="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" draft="yes">
+            <summary>This class represents a rubberband which adds v-objects support functionality to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control.</summary>
+            <remarks><para>This class can be used in combination with the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> control to add v-objects support to this control. You can use the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BitmapViewer" /> + <see cref="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" /> combination if you want to extend your existing application with AJAX Vector Objects. However, if you are going to use AJAX Vector Objects in a new application, it is recommended to use the <see cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" /> instead.</para></remarks>
+            <seealso cref="T:Aurigma.GraphicsMill.AjaxControls.CanvasViewer" />
+        </member>
+        <member name="P:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.Canvas" draft="yes">
+            <summary>Gets the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" />.</summary>
+            <value><para>The <see cref="T:Aurigma.GraphicsMill.AjaxControls.VectorObjects.Canvas" /> associated with this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" />.</para></value>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.Connect(Aurigma.GraphicsMill.AjaxControls.BaseViewer)" draft="yes">
+            <summary>Connects this <see cref="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" /> to the <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> control.</summary>
+            <param name="viewer">The <see cref="T:Aurigma.GraphicsMill.AjaxControls.BaseViewer" /> to connect to.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.GetScriptReferences" draft="yes">
+            <summary>Returns script files for the control.</summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection that contains JavaScript files that have been registered as embedded resources.</returns>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.InitScriptDescriptor(System.Web.UI.ScriptControlDescriptor)">
+            <exclude />
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.#ctor" draft="yes">
+            <summary>Creates and initializes an instance of the <see cref="T:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband" /> class.</summary>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.OnZoomed(System.EventArgs)" draft="yes">
+            <summary>Raises the <see cref="E:Aurigma.GraphicsMill.AjaxControls.BaseViewer.Zoomed" /> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> object that contains the event data.</param>
+        </member>
+        <member name="M:Aurigma.GraphicsMill.AjaxControls.VObjectsRubberband.Render(System.Web.UI.HtmlTextWriter)">
+            <exclude />
+        </member>
+    </members>
+</doc>

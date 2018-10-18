@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxControls", "AjaxControls\AjaxControls.csproj", "{4B342752-5181-4542-9109-355875DE985B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxVectorObjects", "AjaxVectorObjects\AjaxVectorObjects.csproj", "{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svg", "Svg.NET\Svg.csproj", "{886A98C5-37C0-4E8B-885E-30C1D2F98B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvgObjects", "SVGObjects\SvgObjects.csproj", "{34F5E33E-4037-494B-BE37-0558F28A6A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tar-cs", "tar-cs\tar-cs.csproj", "{B9189786-191B-42C7-8029-244E0DA8DA21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B342752-5181-4542-9109-355875DE985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B342752-5181-4542-9109-355875DE985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B342752-5181-4542-9109-355875DE985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B342752-5181-4542-9109-355875DE985B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4993CF3B-CD6F-4D42-AFC9-C8A6C9ADBD07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886A98C5-37C0-4E8B-885E-30C1D2F98B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886A98C5-37C0-4E8B-885E-30C1D2F98B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886A98C5-37C0-4E8B-885E-30C1D2F98B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886A98C5-37C0-4E8B-885E-30C1D2F98B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F5E33E-4037-494B-BE37-0558F28A6A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F5E33E-4037-494B-BE37-0558F28A6A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F5E33E-4037-494B-BE37-0558F28A6A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F5E33E-4037-494B-BE37-0558F28A6A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9189786-191B-42C7-8029-244E0DA8DA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9189786-191B-42C7-8029-244E0DA8DA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9189786-191B-42C7-8029-244E0DA8DA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9189786-191B-42C7-8029-244E0DA8DA21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E30A33E-B33D-4AF3-8108-4D08B0A3906D}
+	EndGlobalSection
+EndGlobal
