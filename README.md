@@ -37,6 +37,11 @@ The default target platform is x86. If you need x64, please replace the NuGet pa
 - [Svg.NET library](https://github.com/vvvv/SVG)
 - [tar-cs library](https://code.google.com/archive/p/tar-cs/)
 
+## Documentation
+
+- [Graphics Mill Web Controls](https://www.graphicsmill.com/docs/gmwc/)
+- [Graphics Mill Core](https://www.graphicsmill.com/docs/gm/)
+
 ## License
 
 This repository is licensed with the [MIT](LICENSE) license.
